@@ -20,8 +20,8 @@ public class Register extends AppCompatActivity {
 
         cache = new Cache(getApplicationContext().getSharedPreferences("MyPref", MODE_PRIVATE));
 
-        cache.clearCache();
-        db = new DBUtil(cache);
+        //cache.clearCache();
+        db = new DBUtil(this,cache);
 
         String registered = cache.getValue("registered");
 
@@ -52,7 +52,7 @@ public class Register extends AppCompatActivity {
         String DOB = tDOB.getText().toString();
 
 
-        db.register(this, fname, lname, mobile, email, DOB);
+        db.register(fname, lname, mobile, email, DOB);
 
     }
 

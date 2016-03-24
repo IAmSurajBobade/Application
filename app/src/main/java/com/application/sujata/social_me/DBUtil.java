@@ -7,9 +7,17 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
+import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * Created by sujata on 22/3/16.
@@ -18,13 +26,15 @@ public class DBUtil {
 
 
    Cache cache;
-
-    DBUtil(Cache cache){
+    Activity activity;
+    DBUtil(Activity activity ,Cache cache)
+    {
+        this.activity = activity;
         this.cache = cache;
     }
 
 
-    public void register(final Activity activity,final String fname,final String lname,final String mobile,final String email,final String DOB){
+    public void register(final String fname,final String lname,final String mobile,final String email,final String DOB){
         class Registration extends AsyncTask<Void,Void,String> {
 
             ProgressDialog loading;
@@ -47,7 +57,7 @@ public class DBUtil {
 
                     cache.putData(keys,values);
                     cache.putData("registered","yes");
-                    getUID(activity, email);
+                    getUID(email);
                 }
             }
 
@@ -73,7 +83,7 @@ public class DBUtil {
 
 
     }
-    public void getUID(final Activity activity,final String email){
+    public void getUID(final String email){
 
         class User extends AsyncTask<Void,Void,String> {
 
@@ -110,4 +120,45 @@ public class DBUtil {
         ae.execute();
 
     }
+    public void getCategories(){
+
+        final ProgressDialog loading = ProgressDialog.show(activity, "Please wait...", "Fetching...", false, false);
+
+        //String url = Config.DATA_URL+editTextId.getText().toString().trim();
+
+        StringRequest stringRequest = new StringRequest(Config.URL_GET_CATEGORIES, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                loading.dismiss();
+                loadCategories(response);
+            }
+        },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(activity, error.getMessage().toString(), Toast.LENGTH_LONG).show();
+                    }
+                });
+
+        RequestQueue requestQueue = Volley.newRequestQueue(activity);
+        requestQueue.add(stringRequest);
+    }
+    public void loadCategories(String r){
+
+        CategoryJSON pj = new CategoryJSON(r);
+        List<String> categories=pj.parseJSON();
+
+        // Creating adapter for categories
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(activity, android.R.layout.simple_spinner_item, categories);
+
+        // attaching data adapter to spinner
+        try{
+            ((MainActivity) activity).setCategorySpinner(dataAdapter);
+        }catch(ClassCastException e){
+            e.printStackTrace();
+        }
+
+
+    }
+
 }

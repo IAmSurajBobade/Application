@@ -8,7 +8,7 @@ public class Config {
     //Address of our scripts of the CRUD
     public static final String URL_REGISTER="https://social-me-regotiss.c9users.io/application/AddUser.php";
     public static final String URL_GET_UID = "https://social-me-regotiss.c9users.io/application/finduid.php?email=";
-    public static final String URL_GET_EMP = "http://192.168.94.1/Android/CRUD/getEmp.php?id=";
+    public static final String URL_GET_CATEGORIES = "https://social-me-regotiss.c9users.io/application/GetCategories.php";
     public static final String URL_UPDATE_EMP = "http://192.168.94.1/Android/CRUD/updateEmp.php";
     public static final String URL_DELETE_EMP = "http://192.168.94.1/Android/CRUD/deleteEmp.php?id=";
 
@@ -18,6 +18,7 @@ public class Config {
     public static final String KEY_MOBILE = "mobile";
     public static final String KEY_EMAIL = "email";
     public static final String KEY_DOB = "DOB";
+    public static final String KEY_CATEGORY = "category_name";
 
     //JSON Tags
     public static final String TAG_JSON_ARRAY="result";
