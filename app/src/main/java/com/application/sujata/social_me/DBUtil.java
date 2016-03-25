@@ -2,12 +2,8 @@ package com.application.sujata.social_me;
 
 
 import android.app.Activity;
-import android.app.Application;
 import android.app.ProgressDialog;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.AsyncTask;
-import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
@@ -27,6 +23,10 @@ public class DBUtil {
 
    Cache cache;
     Activity activity;
+
+    DBUtil(Activity activity){
+        this.activity = activity;
+    }
     DBUtil(Activity activity ,Cache cache)
     {
         this.activity = activity;
@@ -52,7 +52,7 @@ public class DBUtil {
                 Toast.makeText(activity, s, Toast.LENGTH_LONG).show();
                 if(!s.equals("network error")){
 
-                    String keys[]={"fname","lname","email","mobile","DOB"};
+                    String keys[]={Config.KEY_FNAME,Config.KEY_LNAME,Config.KEY_EMAIL,Config.KEY_EMAIL,Config.KEY_DOB};
                     String values[]={fname,lname,email,mobile,DOB};
 
                     cache.putData(keys,values);
@@ -99,7 +99,7 @@ public class DBUtil {
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
                 loading.dismiss();
-                cache.putData("uid",s);
+                cache.putData("uid", s);
                 try{
                     ((Register) activity).redirectToMain();
                 }catch(ClassCastException e){
@@ -120,17 +120,17 @@ public class DBUtil {
         ae.execute();
 
     }
-    public void getCategories(){
+    public void loadListData(String url,final String attr){
 
         final ProgressDialog loading = ProgressDialog.show(activity, "Please wait...", "Fetching...", false, false);
 
         //String url = Config.DATA_URL+editTextId.getText().toString().trim();
 
-        StringRequest stringRequest = new StringRequest(Config.URL_GET_CATEGORIES, new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 loading.dismiss();
-                loadCategories(response);
+                setDataIntoList(response, attr);
             }
         },
                 new Response.ErrorListener() {
@@ -143,21 +143,59 @@ public class DBUtil {
         RequestQueue requestQueue = Volley.newRequestQueue(activity);
         requestQueue.add(stringRequest);
     }
-    public void loadCategories(String r){
+    public void setDataIntoList(String r,String attr){
 
-        CategoryJSON pj = new CategoryJSON(r);
-        List<String> categories=pj.parseJSON();
+        JSON pj = new JSON(r);
+        List<String> list=pj.parseJSON(attr);
 
-        // Creating adapter for categories
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(activity, android.R.layout.simple_spinner_item, categories);
+        if( activity instanceof EventActivity){
+            if(attr.equals(Config.KEY_CATEGORY))
+                ((EventActivity) activity).setCategoryList(list);
+            else
+                ((EventActivity) activity).setCategoryList(list);
 
-        // attaching data adapter to spinner
-        try{
-            ((MainActivity) activity).setCategorySpinner(dataAdapter);
-        }catch(ClassCastException e){
-            e.printStackTrace();
+        }
+        else if(activity instanceof GroupActivity){
+            ((GroupActivity) activity).setContactsRegistered(list);
         }
 
+    }
+    public void addGroupListIntoDB(final String uid,final String gname,final String nos){
+        class Group extends AsyncTask<Void,Void,String> {
+
+            ProgressDialog loading;
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                loading = ProgressDialog.show(activity, "Saving...", "Wait...", false, false);
+            }
+
+            @Override
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+                loading.dismiss();
+                Toast.makeText(activity, s, Toast.LENGTH_LONG).show();
+
+                ((GroupActivity) activity).afterAddingGroup(s);
+            }
+
+            @Override
+            protected String doInBackground(Void... v) {
+                HashMap<String, String> params = new HashMap<>();
+                params.put(Config.KEY_UID, uid);
+                params.put(Config.KEY_GROUPNAME, gname);
+                params.put(Config.KEY_MOBILE, nos);
+
+                RequestHandler rh = new RequestHandler();
+                String res = rh.sendPostRequest(Config.URL_ADD_GROUP, params);
+
+                return res;
+            }
+        }
+
+        Group ae = new Group();
+        ae.execute();
 
     }
 
