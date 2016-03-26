@@ -11,17 +11,28 @@ public class Config {
     public static final String URL_GET_CATEGORIES = "https://social-me-regotiss.c9users.io/application/GetCategories.php";
     public static final String URL_GET_REGISTERED_MOBILE_NOS = "https://social-me-regotiss.c9users.io/application/GetRegisteredContacts.php";
     public static final String URL_ADD_GROUP = "https://social-me-regotiss.c9users.io/application/AddGroup.php";
-    public static final String URL_GET_GROUPS = "https://social-me-regotiss.c9users.io/application/GetGroups.php";
+    public static final String URL_GET_GROUPS = "https://social-me-regotiss.c9users.io/application/GetGroups.php?uid=";
+    public static final String URL_SAVE_EVENT = "https://social-me-regotiss.c9users.io/application/AddEvent.php";
 
-    //Keys that will be used to send the request to php scripts
+    //Keys that will be used to send the request to php scripts : table User
     public static final String KEY_FNAME = "fname";
     public static final String KEY_LNAME = "lname";
     public static final String KEY_MOBILE = "mobile";
     public static final String KEY_EMAIL = "email";
     public static final String KEY_DOB = "DOB";
-    public static final String KEY_CATEGORY = "category_name";
     public static final String KEY_UID = "uid";
+
+
+    //Keys of table Category
+    public static final String KEY_CATEGORY = "category_name";
+
+    //keys of table Group
     public static final String KEY_GROUPNAME = "gname";
+
+    //keys of table Event
+    public static final String KEY_ENAME = "ename";
+    public static final String KEY_EDESC = "edescription";
+    public static final String KEY_ETIME = "etime";
 
 
     //JSON Tags

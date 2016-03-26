@@ -6,57 +6,79 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Register extends AppCompatActivity {
 
     EditText tfname,tlname,tmobile,tDOB,temail;
+    HashMap<String,String> userDetails;
+
     Cache cache;
 
     DBUtil db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        intilize();
+    }
 
+    private void intilize() {
         cache = new Cache(getApplicationContext().getSharedPreferences("MyPref", MODE_PRIVATE));
-
         //cache.clearCache();
-        db = new DBUtil(this,cache);
+        db = new DBUtil(this);
 
         String registered = cache.getValue("registered");
 
         if(registered==null||!registered.equals("yes")) {
 
             setContentView(R.layout.activity_register);
+            userDetails = new HashMap<>();
+            setReferncesToWidgets();
 
         }
         else{
-
-          redirectToMain();
-
+            redirectToMain();
         }
     }
 
-
-    public void register(View v){
+    private void setReferncesToWidgets() {
         tfname = (EditText) findViewById(R.id.tfname);
         tlname = (EditText) findViewById(R.id.tlname);
         temail = (EditText) findViewById(R.id.temail);
         tDOB = (EditText) findViewById(R.id.tDOB);
         tmobile = (EditText) findViewById(R.id.tmobile);
-
-        String fname = tfname.getText().toString();
-        String lname = tlname.getText().toString();
-        String email = temail.getText().toString();
-        String mobile = tmobile.getText().toString();
-        String DOB = tDOB.getText().toString();
+    }
 
 
-        db.register(fname, lname, mobile, email, DOB);
+    public void register(View v){
+
+        userDetails.put(Config.KEY_FNAME, tfname.getText().toString());
+        userDetails.put(Config.KEY_LNAME,tlname.getText().toString());
+        userDetails.put(Config.KEY_EMAIL,temail.getText().toString());
+        userDetails.put(Config.KEY_MOBILE,tmobile.getText().toString());
+        userDetails.put(Config.KEY_DOB,tDOB.getText().toString());
+
+        db.saveDataIntoDB(Config.URL_REGISTER,userDetails);
 
     }
 
+    public void afterTryingToRegister(String response) {
+
+        if (!response.equals("network error")) {
+
+            cache.putData(userDetails);
+            cache.putData("registered", "yes");
+            db.getUID(userDetails.get(Config.KEY_EMAIL));
+
+        }
+    }
     public void redirectToMain() {
         Intent t =  new Intent(this,MainActivity.class);
         startActivity(t);
         finish();
+    }
+    public void saveUID(String uid){
+        cache.putData("uid",uid);
     }
 }

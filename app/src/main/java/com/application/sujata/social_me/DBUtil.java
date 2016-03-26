@@ -14,6 +14,7 @@ import com.android.volley.toolbox.Volley;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by sujata on 22/3/16.
@@ -21,68 +22,48 @@ import java.util.List;
 public class DBUtil {
 
 
-   Cache cache;
+
     Activity activity;
 
     DBUtil(Activity activity){
         this.activity = activity;
     }
-    DBUtil(Activity activity ,Cache cache)
-    {
-        this.activity = activity;
-        this.cache = cache;
-    }
 
-
-    public void register(final String fname,final String lname,final String mobile,final String email,final String DOB){
-        class Registration extends AsyncTask<Void,Void,String> {
-
+    public void saveDataIntoDB(final String url,final HashMap<String,String> data){
+        class Save extends  AsyncTask<Void,Void,String>{
             ProgressDialog loading;
 
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                loading = ProgressDialog.show(activity, "Registering...", "Wait...", false, false);
+                loading = ProgressDialog.show(activity, "Saving...", "Wait...", false, false);
             }
-
             @Override
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
                 loading.dismiss();
                 Toast.makeText(activity, s, Toast.LENGTH_LONG).show();
-                if(!s.equals("network error")){
 
-                    String keys[]={Config.KEY_FNAME,Config.KEY_LNAME,Config.KEY_EMAIL,Config.KEY_EMAIL,Config.KEY_DOB};
-                    String values[]={fname,lname,email,mobile,DOB};
+                if(activity instanceof  Register)
+                    ((Register) activity).afterTryingToRegister(s);
+                else if(activity instanceof  EventActivity)
+                    ((EventActivity) activity).afterTryingToSaveEvent(s);
 
-                    cache.putData(keys,values);
-                    cache.putData("registered","yes");
-                    getUID(email);
-                }
             }
-
             @Override
             protected String doInBackground(Void... v) {
-                HashMap<String, String> params = new HashMap<>();
-                params.put(Config.KEY_FNAME, fname);
-                params.put(Config.KEY_LNAME, lname);
-                params.put(Config.KEY_DOB, DOB);
-                params.put(Config.KEY_EMAIL, email);
-                params.put(Config.KEY_MOBILE, mobile);
 
                 RequestHandler rh = new RequestHandler();
-                String res = rh.sendPostRequest(Config.URL_REGISTER, params);
-
+                String res = rh.sendPostRequest(url, data);
                 return res;
             }
         }
 
-        Registration ae = new Registration();
-        ae.execute();
-
-
-
+        Save s = new Save();
+        s.execute();
     }
+
+
     public void getUID(final String email){
 
         class User extends AsyncTask<Void,Void,String> {
@@ -94,16 +75,13 @@ public class DBUtil {
                 super.onPreExecute();
                 loading = ProgressDialog.show(activity, "Loading...", "Wait...", false, false);
             }
-
-            @Override
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
                 loading.dismiss();
-                cache.putData("uid", s);
-                try{
+
+                if(activity instanceof  Register){
                     ((Register) activity).redirectToMain();
-                }catch(ClassCastException e){
-                    e.printStackTrace();
+                    ((Register) activity).saveUID(s);
                 }
             }
 
@@ -152,7 +130,7 @@ public class DBUtil {
             if(attr.equals(Config.KEY_CATEGORY))
                 ((EventActivity) activity).setCategoryList(list);
             else
-                ((EventActivity) activity).setCategoryList(list);
+                ((EventActivity) activity).setGroupList(list);
 
         }
         else if(activity instanceof GroupActivity){

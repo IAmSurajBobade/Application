@@ -110,18 +110,13 @@ public class GroupActivity extends AppCompatActivity {
 
     public void afterAddingGroup(String resp){
 
-        new AlertDialog.Builder(this)
-                .setTitle("Result")
-                .setMessage(resp)
-                .setPositiveButton("OK", new DialogInterface.OnClickListener(){
+        new MessageBox(this,resp,new DialogInterface.OnClickListener(){
 
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        redirectToMain();
-                    }
-                })
-                .setIcon(android.R.drawable.ic_dialog_info)
-                .show();
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                redirectToMain();
+            }
+        });
 
     }
 

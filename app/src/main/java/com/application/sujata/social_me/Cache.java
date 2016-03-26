@@ -2,6 +2,9 @@ package com.application.sujata.social_me;
 
 import android.content.SharedPreferences;
 
+import java.util.Map;
+import java.util.Set;
+
 /**
  * Created by sujata on 23/3/16.
  */
@@ -49,5 +52,12 @@ public class Cache {
         editor.clear();
         editor.commit();
     }
+    public void putData(Map<String,String> data){
 
+        Set<String> keys = data.keySet();
+        for(String key:keys){
+            putData(key,data.get(key));
+        }
+
+    }
 }
