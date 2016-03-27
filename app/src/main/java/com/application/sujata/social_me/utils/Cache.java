@@ -13,7 +13,7 @@ public class Cache {
     SharedPreferences pref;
     SharedPreferences.Editor editor;
 
-    Cache(SharedPreferences pref){
+    public Cache(SharedPreferences pref){
         this.pref = pref;
         editor = pref.edit();
     }

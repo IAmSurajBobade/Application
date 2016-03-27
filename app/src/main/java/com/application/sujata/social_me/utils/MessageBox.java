@@ -9,7 +9,7 @@ import android.content.DialogInterface;
  */
 public class MessageBox extends AlertDialog.Builder{
 
-    MessageBox(Context context,String message,DialogInterface.OnClickListener listener){
+    public MessageBox(Context context,String message,DialogInterface.OnClickListener listener){
         super(context);
         setTitle("Result");
         setMessage(message);

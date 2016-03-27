@@ -32,7 +32,7 @@ public class DBUtil {
 
     Activity activity;
 
-    DBUtil(Activity activity){
+    public DBUtil(Activity activity){
         this.activity = activity;
     }
 

@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.application.sujata.social_me.beans.NotificationList;
 import com.application.sujata.social_me.utils.Config;
 import com.application.sujata.social_me.networking.DBUtil;
 import com.application.sujata.social_me.adapters.NotificationAdapter;
@@ -44,9 +45,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+
+
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", MODE_PRIVATE);
         String uid = pref.getString("uid", null);
 
+        //Cache ch = new Cache(pref);
+        //ch.putData("uid",17+"");
         if(Config.UID==null)
             Config.UID = uid;
         Toast.makeText(this, Config.URL_NOTIFICATIONS+uid,Toast.LENGTH_LONG).show();
@@ -55,12 +60,13 @@ public class MainActivity extends AppCompatActivity {
         db = new DBUtil(this);
 
 
+        NotificationList.getInstance().clearNotifications();
         db.loadNotifications(Config.URL_NOTIFICATIONS+uid);
 
     }
     public void getLog(){
 
-        NotificationAdapter adapter = new NotificationAdapter(this, NotificationList.getNotifications());
+        NotificationAdapter adapter = new NotificationAdapter(this, NotificationList.getInstance().getNotifications());
         list.setAdapter(adapter);
     }
 

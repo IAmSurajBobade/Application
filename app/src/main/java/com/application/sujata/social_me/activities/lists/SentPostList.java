@@ -36,9 +36,11 @@ public class SentPostList extends AppCompatActivity {
         });
         list = (ListView) findViewById(R.id.listView);
         db = new DBUtil(this);
+        MyPosts.clearPosts();
         db.loadMyPosts(Config.URL_EVENt_REPORT+Config.UID);
     }
     public void setList(){
+
         CustomeSentPostAdapter adapter = new CustomeSentPostAdapter(this, MyPosts.getPosts());
         list.setAdapter(adapter);
     }

@@ -16,8 +16,8 @@ import com.application.sujata.social_me.networking.DBUtil;
 import com.application.sujata.social_me.utils.MessageBox;
 import com.application.sujata.social_me.R;
 import com.application.sujata.social_me.activities.lists.MainActivity;
-import com.application.sujata.social_me.activities.lists.NotificationList;
-import com.application.sujata.social_me.post.eventdetails.PostData;
+import com.application.sujata.social_me.beans.NotificationList;
+
 import com.application.sujata.social_me.beans.ReceivedPost;
 
 import java.util.HashMap;
@@ -52,7 +52,7 @@ public class ReceivedPostDetails extends AppCompatActivity {
             return;
         else{
 
-            List<ReceivedPost> posts = NotificationList.getNotifications();
+            List<ReceivedPost> posts = NotificationList.getInstance().getNotifications();
             post = posts.get(data.getInt("position"));
             setAllDetails(post);
         }

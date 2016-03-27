@@ -2,7 +2,7 @@ package com.application.sujata.social_me.networking;
 
 import com.application.sujata.social_me.utils.Config;
 import com.application.sujata.social_me.beans.MemberInfo;
-import com.application.sujata.social_me.activities.lists.NotificationList;
+import com.application.sujata.social_me.beans.NotificationList;
 import com.application.sujata.social_me.beans.MyPosts;
 import com.application.sujata.social_me.beans.ReceivedPost;
 import com.application.sujata.social_me.beans.SentPost;
@@ -119,7 +119,7 @@ public class JSON {
                 ReceivedPost post = new ReceivedPost(data,jo.getString(Config.KEY_SENDER),jo.getString(Config.KEY_MOBILE));
 
 
-                NotificationList.addToNotification(post);
+                NotificationList.getInstance().addToNotification(post);
 
             }
         } catch (JSONException e) {

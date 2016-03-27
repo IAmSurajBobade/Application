@@ -36,7 +36,7 @@ public class CustomeSentPostAdapter extends ArrayAdapter<SentPost> {
         TextView eventTime = (TextView) custom_row.findViewById(R.id.time);
         TextView response = (TextView) custom_row.findViewById(R.id.responses);
 
-        response.setText("Responses:GoingFragment :"+ post.getGoingCount()+" May Be:"+post.getMayBeCount()+" Not:"+post.getNotCount());
+        response.setText("Responses:\nGoing :"+ post.getGoingCount()+" May Be:"+post.getMayBeCount()+" Not:"+post.getNotCount());
         custom_row.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

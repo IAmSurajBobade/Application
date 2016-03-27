@@ -17,7 +17,7 @@ public class Contacts {
     Map<String,String> contactsNameMap;
     Map<String,String> contactsNoMap;
 
-    Contacts(Activity activity){
+    public Contacts(Activity activity){
 
         contactsNameMap = new HashMap<>();
         contactsNoMap = new HashMap<>();
