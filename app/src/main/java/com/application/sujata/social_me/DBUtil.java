@@ -4,6 +4,7 @@ package com.application.sujata.social_me;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
@@ -43,11 +44,14 @@ public class DBUtil {
                 super.onPostExecute(s);
                 loading.dismiss();
                 Toast.makeText(activity, s, Toast.LENGTH_LONG).show();
+                Log.i("MyActivity", "sql: " + s);
 
                 if(activity instanceof  Register)
                     ((Register) activity).afterTryingToRegister(s);
                 else if(activity instanceof  EventActivity)
                     ((EventActivity) activity).afterTryingToSaveEvent(s);
+                else if(activity instanceof ReceivedPostDetails)
+                    ((ReceivedPostDetails)activity).afterTryingToSaveNotification(s);
 
             }
             @Override
@@ -174,6 +178,40 @@ public class DBUtil {
 
         Group ae = new Group();
         ae.execute();
+
+    }
+
+    public void loadNotifications(String url){
+
+        final ProgressDialog loading = ProgressDialog.show(activity, "Please wait...", "Fetching...", false, false);
+
+        //String url = Config.DATA_URL+editTextId.getText().toString().trim();
+
+        StringRequest stringRequest = new StringRequest(url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                loading.dismiss();
+                setNotifications(response);
+            }
+        },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(activity, error.getMessage().toString(), Toast.LENGTH_LONG).show();
+                    }
+                });
+
+        RequestQueue requestQueue = Volley.newRequestQueue(activity);
+        requestQueue.add(stringRequest);
+    }
+    public void setNotifications(String r){
+
+        JSON pj = new JSON(r);
+        pj.parseJSONForNotifications();
+
+        if(activity instanceof MainActivity){
+            ((MainActivity) activity).getLog();
+        }
 
     }
 
