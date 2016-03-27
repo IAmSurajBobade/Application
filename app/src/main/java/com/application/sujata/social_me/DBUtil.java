@@ -215,4 +215,40 @@ public class DBUtil {
 
     }
 
+
+    public void loadMyPosts(String url){
+
+        final ProgressDialog loading = ProgressDialog.show(activity, "Please wait...", "Fetching...", false, false);
+
+        //String url = Config.DATA_URL+editTextId.getText().toString().trim();
+
+        StringRequest stringRequest = new StringRequest(url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                loading.dismiss();
+                setMyPosts(response);
+            }
+        },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(activity, error.getMessage().toString(), Toast.LENGTH_LONG).show();
+                    }
+                });
+
+        RequestQueue requestQueue = Volley.newRequestQueue(activity);
+        requestQueue.add(stringRequest);
+    }
+    public void setMyPosts(String r){
+
+        JSON pj = new JSON(r);
+        pj.parseJSONForMyPosts();
+
+        if(activity instanceof SentPostList){
+            ((SentPostList) activity).setList();
+        }
+
+
+    }
+
 }

@@ -6,8 +6,12 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ListView;
 
 public class SentPostList extends AppCompatActivity {
+
+    DBUtil db;
+    ListView list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +28,12 @@ public class SentPostList extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        list = (ListView) findViewById(R.id.listView);
+        db = new DBUtil(this);
+        db.loadMyPosts(Config.URL_EVENt_REPORT+Config.UID);
     }
-
+    public void setList(){
+        CustomeSentPostAdapter adapter = new CustomeSentPostAdapter(this, MyPosts.getPosts());
+        list.setAdapter(adapter);
+    }
 }

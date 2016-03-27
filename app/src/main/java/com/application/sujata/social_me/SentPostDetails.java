@@ -10,6 +10,7 @@ import android.view.View;
 
 public class SentPostDetails extends AppCompatActivity {
 
+    DBUtil db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

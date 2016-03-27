@@ -10,7 +10,7 @@ import java.util.List;
 public class SentPost extends Post{
 
     private int noresponse;
-    private List<String> goingList,mayBeList,notList;
+    private List<MemberInfo> goingList,mayBeList,notList;
 
     public SentPost(HashMap<String, String> postDetails, int noresponse){
         super(postDetails);
@@ -22,9 +22,20 @@ public class SentPost extends Post{
 
     }
 
-    public void addToGoingList(String member){
-
+    public void addToGoingList(MemberInfo member){
+        goingList.add(member);
+        noresponse--;
     }
+    public void addToNotList(MemberInfo member){
+        notList.add(member);
+        noresponse--;
+    }
+
+    public void addMayBeList(MemberInfo member){
+        mayBeList.add(member);
+        noresponse--;
+    }
+
     public int getGoingCount(){
         return goingList.size();
     }

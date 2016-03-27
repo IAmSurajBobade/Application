@@ -17,6 +17,7 @@ public class Config {
     public static final String URL_SAVE_EVENT = "https://social-me-regotiss.c9users.io/application/AddEvent.php";
     public static final String URL_NOTIFICATIONS = "https://social-me-regotiss.c9users.io/application/Notification.php?uid=";
     public static final String URL_ADD_RESPONSE = "https://social-me-regotiss.c9users.io/application/AddResponse.php";
+    public static final String URL_EVENt_REPORT = "https://social-me-regotiss.c9users.io/application/EventReport.php?uid=";
 
     //Keys that will be used to send the request to php scripts : table User
     public static final String KEY_FNAME = "fname";

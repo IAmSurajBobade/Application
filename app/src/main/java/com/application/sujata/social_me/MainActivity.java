@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", MODE_PRIVATE);
-        String uid = pref.getString("uid",null);
+        String uid = pref.getString("uid", null);
 
         if(Config.UID==null)
             Config.UID = uid;
@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
             redirectToAddGroup();
         }
         else if(id==R.id.myposts){
-
+            redirectToMyPosts();
         }
         return true;
     }
@@ -96,4 +96,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(t);
         finish();
     }
+    public void redirectToMyPosts(){
+        Intent t =  new Intent(this,SentPostList.class);
+        startActivity(t);
+        finish();
+    }
+
+
 }

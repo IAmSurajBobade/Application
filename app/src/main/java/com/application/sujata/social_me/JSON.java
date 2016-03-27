@@ -46,6 +46,52 @@ public class JSON {
         return categories;
     }
 
+    protected void parseJSONForMyPosts() {
+
+
+        JSONObject jsonObject = null;
+        try {
+            jsonObject = new JSONObject(json);
+            list = jsonObject.getJSONArray(Config.TAG_JSON_ARRAY);
+
+
+            for(int i=0;i< list.length();i++){
+                JSONObject jo = list.getJSONObject(i);
+
+                HashMap<String,String> data = new HashMap<>();
+                data.put(Config.KEY_ENAME,jo.getString(Config.KEY_ENAME));
+                data.put(Config.KEY_ETIME,jo.getString(Config.KEY_ETIME));
+                data.put(Config.KEY_CATEGORY,jo.getString(Config.KEY_CATEGORY));
+                data.put(Config.KEY_GROUPNAME,jo.getString(Config.KEY_GROUPNAME));
+                data.put(Config.KEY_EDESC, jo.getString(Config.KEY_EDESC));
+
+
+                SentPost post = new SentPost(data,jo.getInt("members"));
+                JSONArray going=jo.getJSONArray("going");
+                for(int j=0;j<going.length();j++){
+                    JSONObject mem = going.getJSONObject(j);
+                    post.addToGoingList(new MemberInfo(mem.getString("name"),mem.getString("mobile")));
+                }
+
+                JSONArray maybe=jo.getJSONArray("maybe");
+                for(int j=0;j<maybe.length();j++){
+                    JSONObject mem = maybe.getJSONObject(j);
+                    post.addMayBeList(new MemberInfo(mem.getString("name"),mem.getString("mobile")));
+                }
+
+                JSONArray not=jo.getJSONArray("not");
+                for(int j=0;j<not.length();j++){
+                    JSONObject mem = not.getJSONObject(j);
+                    post.addToNotList(new MemberInfo(mem.getString("name"),mem.getString("mobile")));
+                }
+                MyPosts.addToPosts(post);
+
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+    }
     protected void parseJSONForNotifications() {
 
 
@@ -65,6 +111,8 @@ public class JSON {
                 data.put(Config.KEY_EDESC, jo.getString(Config.KEY_EDESC));
 
                 ReceivedPost post = new ReceivedPost(data,jo.getString(Config.KEY_SENDER),jo.getString(Config.KEY_MOBILE));
+
+
                 Notification.addToNotification(post);
 
             }
