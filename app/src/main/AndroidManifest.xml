@@ -11,12 +11,12 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EventActivity">
+        <activity android:name=".activities.EventActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name=".Register">
+        <activity android:name=".activities.RegisterActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,11 +24,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.lists.MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".GroupActivity"
+            android:name=".activities.GroupActivity"
             android:label="@string/title_activity_group"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -45,19 +45,15 @@
                 android:value="com.application.sujata.social_me.post.PostListActivity" />
         </activity>
         <activity
-            android:name=".PostDetails"
-            android:label="@string/title_activity_post_details"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".SentPostDetails"
+            android:name=".activities.SentPostDetails"
             android:label="@string/title_activity_sent_post_details"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ReceivedPostDetails"
+            android:name=".activities.ReceivedPostDetails"
             android:label="@string/title_activity_received_post_details"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".SentPostList"
+            android:name=".activities.lists.SentPostList"
             android:label="@string/title_activity_sent_post_list"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
