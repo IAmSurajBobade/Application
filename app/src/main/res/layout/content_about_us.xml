@@ -76,7 +76,8 @@
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:id="@+id/developer1_photo"
-                        android:layout_weight="1"/>
+                        android:layout_weight="1"
+                        android:src="@drawable/surajab"/>
                     <GridLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -89,8 +90,7 @@
                             android:layout_gravity="center_vertical"
                             android:layout_row="0"
                             android:layout_column="0"
-                            android:textStyle="bold"
-                            android:background="#c0c0c0" />
+                            android:textStyle="bold" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -98,6 +98,13 @@
                             android:padding="5dp"
                             android:layout_row="0"
                             android:layout_column="1"/>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#c0c0c0"
+                            android:layout_row="1"
+                            android:layout_column="0"
+                            android:layout_columnSpan="2"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -105,16 +112,15 @@
                             android:text="E-Mail: "
                             android:padding="5dp"
                             android:layout_gravity="center_vertical"
-                            android:layout_row="1"
+                            android:layout_row="2"
                             android:layout_column="0"
-                            android:textStyle="bold"
-                            android:background="#c0c0c0" />
+                            android:textStyle="bold" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/dev1_email"
                             android:padding="5dp"
-                            android:layout_row="1"
+                            android:layout_row="2"
                             android:layout_column="1"/>
                     </GridLayout>
                 </LinearLayout>
@@ -170,7 +176,8 @@
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:id="@+id/developer2_photo"
-                        android:layout_weight="1"/>
+                        android:layout_weight="1"
+                        android:src="@drawable/surajab"/>
                     <GridLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -183,8 +190,7 @@
                             android:layout_gravity="center_vertical"
                             android:layout_row="0"
                             android:layout_column="0"
-                            android:textStyle="bold"
-                            android:background="#c0c0c0" />
+                            android:textStyle="bold" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -192,23 +198,28 @@
                             android:padding="5dp"
                             android:layout_row="0"
                             android:layout_column="1"/>
-
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#c0c0c0"
+                            android:layout_row="1"
+                            android:layout_column="0"
+                            android:layout_columnSpan="2"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="E-Mail: "
                             android:padding="5dp"
                             android:layout_gravity="center_vertical"
-                            android:layout_row="1"
+                            android:layout_row="2"
                             android:layout_column="0"
-                            android:textStyle="bold"
-                            android:background="#c0c0c0" />
+                            android:textStyle="bold" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/dev2_email"
                             android:padding="5dp"
-                            android:layout_row="1"
+                            android:layout_row="2"
                             android:layout_column="1"/>
                     </GridLayout>
                 </LinearLayout>
@@ -233,7 +244,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Suraj Bobade"
+                    android:text="Mrunal Selokar"
                     android:id="@+id/developer3_name"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentLeft="true"
@@ -264,7 +275,8 @@
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:id="@+id/developer3_photo"
-                        android:layout_weight="1"/>
+                        android:layout_weight="1"
+                        android:src="@drawable/mrunalks"/>
                     <GridLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -273,13 +285,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Role(s):"
-                            android:id="@+id/developer1_role"
                             android:padding="5dp"
                             android:layout_gravity="center_vertical"
                             android:layout_row="0"
                             android:layout_column="0"
-                            android:textStyle="bold"
-                            android:background="#c0c0c0" />
+                            android:textStyle="bold"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -287,30 +297,34 @@
                             android:padding="5dp"
                             android:layout_row="0"
                             android:layout_column="1"/>
-
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#c0c0c0"
+                            android:layout_row="1"
+                            android:layout_column="0"
+                            android:layout_columnSpan="2"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="E-Mail: "
                             android:padding="5dp"
                             android:layout_gravity="center_vertical"
-                            android:layout_row="1"
+                            android:layout_row="2"
                             android:layout_column="0"
-                            android:textStyle="bold"
-                            android:background="#c0c0c0" />
+                            android:textStyle="bold"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/dev3_email"
                             android:padding="5dp"
-                            android:layout_row="1"
+                            android:layout_row="2"
                             android:layout_column="1"/>
                     </GridLayout>
                 </LinearLayout>
 
             </RelativeLayout>
         </android.support.v7.widget.CardView>
-
 
         <View
             android:layout_width="match_parent"
@@ -330,7 +344,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:padding="10dp"
-            android:text="Guide"
+            android:text="Project Guide"
             android:textSize="30dp"/>
 
         <android.support.v7.widget.CardView
@@ -341,47 +355,53 @@
             android:layout_margin="10dp"
             card_view:cardCornerRadius="5dp"
             android:elevation="15dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:weightSum="10"
+                android:padding="10dp"
                 android:id="@+id/guide1">
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:src="@drawable/surajab"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Prof. Dr. Smriti Bhandari"
+                    android:text="Dr. Smriti Bhandari"
                     android:gravity="center_vertical"
-                    android:textSize="25dp"/>
+                    android:textSize="20dp"/>
             </LinearLayout>
+        </android.support.v7.widget.CardView>
 
-            <LinearLayout
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:layout_margin="10dp"
+            card_view:cardCornerRadius="5dp"
+            android:elevation="15dp">
+        <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:padding="10dp"
                 android:weightSum="10">
 
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:src="@drawable/surajab"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Miss. Madam"/>
+                    android:text="Ms. S. Kshirsagar"
+                    android:textSize="20dp"/>
             </LinearLayout>
-
-        </LinearLayout>
-
         </android.support.v7.widget.CardView>
     </LinearLayout>
-
 </android.support.v4.widget.NestedScrollView>
