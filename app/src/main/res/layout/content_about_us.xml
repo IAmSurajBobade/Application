@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.application.sujata.social_me.about_us"
+    tools:showIn="@layout/activity_about_us">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:padding="10dp"
+            android:text="Developers"
+            android:textSize="30dp"
+            android:id="@+id/textView" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#c0c0c0"
+            android:padding="5dp">
+        </View>
+
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:layout_margin="10dp"
+            card_view:cardCornerRadius="5dp"
+            android:elevation="15dp"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Suraj Bobade"
+                    android:id="@+id/developer1_name"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:textSize="25sp"
+                    android:textColor="BLACK"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Age : 20"
+                    android:padding="5dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#c0c0c0"
+                    android:padding="5dp"
+                    android:layout_below="@id/developer1_name"
+                    android:id="@+id/line1">
+                </View>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@+id/line1"
+                    android:weightSum="10">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src=""
+                        android:id="@+id/developer1_photo"
+                        android:layout_weight="1"/>
+                    <GridLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:columnOrderPreserved="true">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Role(s):"
+                            android:padding="5dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_row="0"
+                            android:layout_column="0"
+                            android:textStyle="bold"
+                            android:background="#c0c0c0"
+                            android:textColor="BLACK"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dev1_rol"
+                            android:padding="5dp"
+                            android:layout_row="0"
+                            android:layout_column="1"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="E-Mail: "
+                            android:padding="5dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_row="1"
+                            android:layout_column="0"
+                            android:textStyle="bold"
+                            android:background="#c0c0c0"
+                            android:textColor="BLACK"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dev1_email"
+                            android:padding="5dp"
+                            android:layout_row="1"
+                            android:layout_column="1"/>
+                    </GridLayout>
+                </LinearLayout>
+
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:layout_margin="10dp"
+            card_view:cardCornerRadius="5dp"
+            android:elevation="15dp"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sujata Regoti"
+                    android:id="@+id/developer2_name"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:textSize="25sp"
+                    android:textColor="BLACK"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Age : 20"
+                    android:padding="5dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#c0c0c0"
+                    android:padding="5dp"
+                    android:layout_below="@id/developer2_name"
+                    android:id="@+id/line2">
+                </View>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@+id/line2"
+                    android:weightSum="10">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src=""
+                        android:id="@+id/developer2_photo"
+                        android:layout_weight="1"/>
+                    <GridLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:columnOrderPreserved="true">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Role(s):"
+                            android:padding="5dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_row="0"
+                            android:layout_column="0"
+                            android:textStyle="bold"
+                            android:background="#c0c0c0"
+                            android:textColor="BLACK"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dev2_rol"
+                            android:padding="5dp"
+                            android:layout_row="0"
+                            android:layout_column="1"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="E-Mail: "
+                            android:padding="5dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_row="1"
+                            android:layout_column="0"
+                            android:textStyle="bold"
+                            android:background="#c0c0c0"
+                            android:textColor="BLACK"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dev2_email"
+                            android:padding="5dp"
+                            android:layout_row="1"
+                            android:layout_column="1"/>
+                    </GridLayout>
+                </LinearLayout>
+
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:layout_margin="10dp"
+            card_view:cardCornerRadius="5dp"
+            android:elevation="15dp"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Suraj Bobade"
+                    android:id="@+id/developer3_name"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:textSize="25sp"
+                    android:textColor="BLACK"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Age : 20"
+                    android:padding="5dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#c0c0c0"
+                    android:padding="5dp"
+                    android:layout_below="@id/developer3_name"
+                    android:id="@+id/line3">
+                </View>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@+id/line3"
+                    android:weightSum="10">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src=""
+                        android:id="@+id/developer3_photo"
+                        android:layout_weight="1"/>
+                    <GridLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:columnOrderPreserved="true">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Role(s):"
+                            android:id="@+id/developer1_role"
+                            android:padding="5dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_row="0"
+                            android:layout_column="0"
+                            android:textStyle="bold"
+                            android:background="#c0c0c0"
+                            android:textColor="BLACK"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dev3_rol"
+                            android:padding="5dp"
+                            android:layout_row="0"
+                            android:layout_column="1"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="E-Mail: "
+                            android:padding="5dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_row="1"
+                            android:layout_column="0"
+                            android:textStyle="bold"
+                            android:background="#c0c0c0"
+                            android:textColor="BLACK"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dev3_email"
+                            android:padding="5dp"
+                            android:layout_row="1"
+                            android:layout_column="1"/>
+                    </GridLayout>
+                </LinearLayout>
+
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#c0c0c0"
+            android:padding="5dp">
+        </View>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#c0c0c0"
+            android:padding="5dp">
+        </View>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:padding="10dp"
+            android:text="Guide"
+            android:textSize="30dp"/>
+
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:layout_margin="10dp"
+            card_view:cardCornerRadius="5dp"
+            android:elevation="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="10"
+                android:id="@+id/guide1">
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src=""
+                    android:layout_weight="1"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Prof. Dr. Smriti Bhandari"
+                    android:gravity="center_vertical"
+                    android:textSize="25dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src=""
+                    android:layout_weight="1"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Miss. Madam"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

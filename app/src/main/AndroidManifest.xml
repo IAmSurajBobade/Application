@@ -55,7 +55,16 @@
         <activity
             android:name=".activities.lists.SentPostList"
             android:label="@string/title_activity_sent_post_list"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".about_us"
+            android:label="@string/title_activity_about_us"
+            android:parentActivityName=".activities.lists.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.application.sujata.social_me.activities.lists.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

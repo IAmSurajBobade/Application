@@ -22,5 +22,8 @@
             android:title="@string/myposts"
             app:showAsAction="never" />
 
+        <item
+            android:id="@+id/title"/>
+
     </group>
 </menu>

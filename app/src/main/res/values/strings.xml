@@ -12,6 +12,22 @@
     <string name="title_activity_received_post_details">ReceivedPostDetails</string>
     <string name="title_activity_sent_post_list">SentPostList</string>
 
+    <string name="tfname">First Name</string>
+    <string name="tlname">Last Name</string>
+    <string name="tmobile">Mobile Number</string>
+    <string name="temail">E-mail Id</string>
+    <string name="tDOB">Date of Birth</string>
+    <string name="register_button">Register</string>
+
+    <string name="dev1_rol">-Team Lead\n-Developer</string>
+    <string name="dev2_rol">-Lead Developer\n-Back End Developer</string>
+    <string name="dev3_rol">-Lead Tester\n-Developer</string>
+    <string name="dev1_email">suraj@wceacses.org</string>
+    <string name="dev2_email">sujata.regoti@gmail.com</string>
+    <string name="dev3_email">mrunal_selokar@outlook.com</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_about_us">Dream Team</string>
+    <string name="action_settings">Settings</string>
 </resources>
