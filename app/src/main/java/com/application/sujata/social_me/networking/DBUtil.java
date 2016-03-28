@@ -144,7 +144,7 @@ public class DBUtil {
 
         }
         else if(activity instanceof GroupActivity){
-            ((GroupActivity) activity).setContactsRegistered(list);
+            ((GroupActivity) activity).setGroupListView(list);
         }
 
     }

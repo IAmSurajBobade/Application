@@ -38,7 +38,11 @@ public class JSON {
 
             for(int i=0;i< list.length();i++){
                 JSONObject jo = list.getJSONObject(i);
-                String category = jo.getString(attr);
+                String category="";
+                if(attr.equals(Config.KEY_MOBILE)){
+                    category += jo.getString("name")+" ";
+                }
+                category+= jo.getString(attr);
                 categories.add(category);
             }
         } catch (JSONException e) {

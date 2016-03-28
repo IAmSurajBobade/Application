@@ -59,7 +59,7 @@ public class GroupActivity extends AppCompatActivity {
         contacts =new Contacts(this);
 
         db = new DBUtil(this);
-        db.loadListData(Config.URL_GET_REGISTERED_MOBILE_NOS,Config.KEY_MOBILE);
+        db.loadListData(Config.URL_ALL_CONTACTS+Config.UID,Config.KEY_MOBILE);
 
 
     }
