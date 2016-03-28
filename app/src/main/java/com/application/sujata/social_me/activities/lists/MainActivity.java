@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.application.sujata.social_me.about_us;
 import com.application.sujata.social_me.beans.NotificationList;
 import com.application.sujata.social_me.utils.Config;
 import com.application.sujata.social_me.networking.DBUtil;
@@ -54,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         //ch.putData("uid",17+"");
         if(Config.UID==null)
             Config.UID = uid;
-        Toast.makeText(this, Config.URL_NOTIFICATIONS+uid,Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "TOAST",Toast.LENGTH_LONG).show();
 
         list = (ListView) findViewById(R.id.log_list);
         db = new DBUtil(this);
@@ -87,12 +88,14 @@ public class MainActivity extends AppCompatActivity {
         else
             item.setChecked(true);
 
-
         if(id==R.id.add_group){
             redirectToAddGroup();
         }
         else if(id==R.id.myposts){
             redirectToMyPosts();
+        }
+        else if(id == R.id.title_activity_about_us){
+            redirectToAboutUs();
         }
         return true;
     }
@@ -112,6 +115,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(t);
         finish();
     }
-
+    public void redirectToAboutUs(){
+        Intent t =  new Intent(this,about_us.class);
+        startActivity(t);
+        finish();
+    }
 
 }

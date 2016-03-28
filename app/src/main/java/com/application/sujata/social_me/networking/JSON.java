@@ -23,28 +23,23 @@ public class JSON {
 
 
     private JSONArray list = null;
-
     private String json;
-
     public JSON(String json){
         this.json = json;
     }
 
+
     protected List<String> parseJSON(String attr) {
-
-
         List<String> categories = new ArrayList<>();
         JSONObject jsonObject = null;
         try {
             jsonObject = new JSONObject(json);
             list = jsonObject.getJSONArray(Config.TAG_JSON_ARRAY);
 
-
             for(int i=0;i< list.length();i++){
                 JSONObject jo = list.getJSONObject(i);
                 String category = jo.getString(attr);
                 categories.add(category);
-
             }
         } catch (JSONException e) {
             e.printStackTrace();
@@ -52,14 +47,12 @@ public class JSON {
         return categories;
     }
 
+
     protected void parseJSONForMyPosts() {
-
-
         JSONObject jsonObject = null;
         try {
             jsonObject = new JSONObject(json);
             list = jsonObject.getJSONArray(Config.TAG_JSON_ARRAY);
-
 
             for(int i=0;i< list.length();i++){
                 JSONObject jo = list.getJSONObject(i);
@@ -70,7 +63,6 @@ public class JSON {
                 data.put(Config.KEY_CATEGORY,jo.getString(Config.KEY_CATEGORY));
                 data.put(Config.KEY_GROUPNAME,jo.getString(Config.KEY_GROUPNAME));
                 data.put(Config.KEY_EDESC, jo.getString(Config.KEY_EDESC));
-
 
                 SentPost post = new SentPost(data,jo.getInt("members"));
                 JSONArray going=jo.getJSONArray("going");
@@ -98,14 +90,13 @@ public class JSON {
         }
 
     }
+
+
     protected void parseJSONForNotifications() {
-
-
         JSONObject jsonObject = null;
         try {
             jsonObject = new JSONObject(json);
             list = jsonObject.getJSONArray(Config.TAG_JSON_ARRAY);
-
 
             for(int i=0;i< list.length();i++){
                 JSONObject jo = list.getJSONObject(i);
@@ -113,14 +104,10 @@ public class JSON {
                 HashMap<String,String> data = new HashMap<>();
                 data.put(Config.KEY_ENAME,jo.getString(Config.KEY_ENAME));
                 data.put(Config.KEY_ETIME,jo.getString(Config.KEY_ETIME));
-
                 data.put(Config.KEY_EDESC, jo.getString(Config.KEY_EDESC));
 
                 ReceivedPost post = new ReceivedPost(data,jo.getString(Config.KEY_SENDER),jo.getString(Config.KEY_MOBILE));
-
-
                 NotificationList.getInstance().addToNotification(post);
-
             }
         } catch (JSONException e) {
             e.printStackTrace();

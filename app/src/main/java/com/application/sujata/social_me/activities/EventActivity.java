@@ -55,7 +55,6 @@ public class EventActivity extends AppCompatActivity {
 
         eventDetails = new HashMap<>();
 
-
         db.loadListData(Config.URL_GET_CATEGORIES,Config.KEY_CATEGORY);
         db.loadListData(Config.URL_GET_GROUPS+uid,Config.KEY_GROUPNAME);
 

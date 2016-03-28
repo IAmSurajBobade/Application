@@ -49,8 +49,7 @@
                     android:id="@+id/developer1_name"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentLeft="true"
-                    android:textSize="25sp"
-                    android:textColor="BLACK"/>
+                    android:textSize="25sp"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -76,7 +75,6 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:src=""
                         android:id="@+id/developer1_photo"
                         android:layout_weight="1"/>
                     <GridLayout
@@ -92,8 +90,7 @@
                             android:layout_row="0"
                             android:layout_column="0"
                             android:textStyle="bold"
-                            android:background="#c0c0c0"
-                            android:textColor="BLACK"/>
+                            android:background="#c0c0c0" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -111,8 +108,7 @@
                             android:layout_row="1"
                             android:layout_column="0"
                             android:textStyle="bold"
-                            android:background="#c0c0c0"
-                            android:textColor="BLACK"/>
+                            android:background="#c0c0c0" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -147,8 +143,7 @@
                     android:id="@+id/developer2_name"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentLeft="true"
-                    android:textSize="25sp"
-                    android:textColor="BLACK"/>
+                    android:textSize="25sp" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -174,7 +169,6 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:src=""
                         android:id="@+id/developer2_photo"
                         android:layout_weight="1"/>
                     <GridLayout
@@ -190,8 +184,7 @@
                             android:layout_row="0"
                             android:layout_column="0"
                             android:textStyle="bold"
-                            android:background="#c0c0c0"
-                            android:textColor="BLACK"/>
+                            android:background="#c0c0c0" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -209,8 +202,7 @@
                             android:layout_row="1"
                             android:layout_column="0"
                             android:textStyle="bold"
-                            android:background="#c0c0c0"
-                            android:textColor="BLACK"/>
+                            android:background="#c0c0c0" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -245,8 +237,7 @@
                     android:id="@+id/developer3_name"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentLeft="true"
-                    android:textSize="25sp"
-                    android:textColor="BLACK"/>
+                    android:textSize="25sp" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -272,7 +263,6 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:src=""
                         android:id="@+id/developer3_photo"
                         android:layout_weight="1"/>
                     <GridLayout
@@ -289,8 +279,7 @@
                             android:layout_row="0"
                             android:layout_column="0"
                             android:textStyle="bold"
-                            android:background="#c0c0c0"
-                            android:textColor="BLACK"/>
+                            android:background="#c0c0c0" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -308,8 +297,7 @@
                             android:layout_row="1"
                             android:layout_column="0"
                             android:textStyle="bold"
-                            android:background="#c0c0c0"
-                            android:textColor="BLACK"/>
+                            android:background="#c0c0c0" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -366,7 +354,6 @@
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:src=""
                     android:layout_weight="1"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -385,7 +372,6 @@
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:src=""
                     android:layout_weight="1"/>
                 <TextView
                     android:layout_width="wrap_content"

@@ -2,7 +2,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.application.sujata.overflowmenu.MainActivity">
-
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/settings"
@@ -18,12 +17,15 @@
 
         <item
             android:id="@+id/myposts"
-            android:orderInCategory="2"
+            android:orderInCategory="3"
             android:title="@string/myposts"
             app:showAsAction="never" />
-
-        <item
-            android:id="@+id/title"/>
-
     </group>
+
+    <item
+        android:id="@+id/title_activity_about_us"
+        android:title="About Us"
+        android:orderInCategory="4"
+        app:showAsAction="never" />
+
 </menu>
