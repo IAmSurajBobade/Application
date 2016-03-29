@@ -79,7 +79,7 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
     public void redirectToMain() {
-        Intent t =  new Intent(this,MainActivity.class);
+        Intent t =  new Intent(this,MainFrame.class);
         startActivity(t);
         finish();
     }
