@@ -1,5 +1,6 @@
 package com.application.sujata.social_me.networking;
 
+import com.application.sujata.social_me.beans.RemoteContacts;
 import com.application.sujata.social_me.utils.Config;
 import com.application.sujata.social_me.beans.MemberInfo;
 import com.application.sujata.social_me.beans.NotificationList;
@@ -39,10 +40,15 @@ public class JSON {
             for(int i=0;i< list.length();i++){
                 JSONObject jo = list.getJSONObject(i);
                 String category="";
+                MemberInfo memberInfo ;
                 if(attr.equals(Config.KEY_MOBILE)){
                     category += jo.getString("name")+" ";
+                    memberInfo = new MemberInfo(jo.getString("name"),jo.getString(attr));
+                    RemoteContacts.addToContacts(memberInfo);
                 }
                 category+= jo.getString(attr);
+
+
                 categories.add(category);
             }
         } catch (JSONException e) {

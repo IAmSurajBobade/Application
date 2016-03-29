@@ -70,14 +70,14 @@ public class EventActivity extends AppCompatActivity {
     public void setCategoryList(List<String> categories){
 
         // Creating adapter for categories
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, categories);
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, categories);
         setCategorySpinner(dataAdapter);
 
     }
     public void setGroupList(List<String> groups){
 
         // Creating adapter for groups
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, groups);
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, groups);
         setGroupsSpinner(dataAdapter);
     }
 

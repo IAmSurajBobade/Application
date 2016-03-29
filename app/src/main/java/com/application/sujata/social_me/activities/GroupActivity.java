@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.application.sujata.social_me.beans.RemoteContacts;
 import com.application.sujata.social_me.utils.Cache;
 import com.application.sujata.social_me.utils.Config;
 import com.application.sujata.social_me.utils.Contacts;
@@ -93,15 +94,14 @@ public class GroupActivity extends AppCompatActivity {
         String nos = "";
         if(array.size() >= 1) {
 
-            for(int i=0;i< names.size();i++) {
+            for(int i=0;i< RemoteContacts.getContacts().size();i++) {
                 if(array.get(i)){
                     if(i==0)
-                        nos+=contacts.getMobileNo(names.get(i));
+                        nos+=RemoteContacts.getContacts().get(i).getMobile();
                     else
-                        nos+=","+contacts.getMobileNo(names.get(i));
+                        nos+=","+RemoteContacts.getContacts().get(i).getMobile();
                 }
             }
-
             Toast.makeText(this,"numbers:"+nos,Toast.LENGTH_LONG).show();
             db.addGroupListIntoDB(cache.getValue("uid"), tGroupName.getText().toString(), nos);
         }
