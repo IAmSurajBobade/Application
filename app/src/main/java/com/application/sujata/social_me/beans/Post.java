@@ -4,9 +4,7 @@ import com.application.sujata.social_me.utils.Config;
 
 import java.util.HashMap;
 
-/**
- * Created by sujata on 26/3/16.
- */
+
 public class Post {
 
 

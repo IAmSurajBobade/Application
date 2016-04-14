@@ -16,9 +16,7 @@ import com.application.sujata.social_me.beans.ReceivedPost;
 
 import java.util.List;
 
-/**
- * Created by sujata on 27/3/16.
- */
+
 public class NotificationAdapter extends ArrayAdapter<ReceivedPost> {
 
     public NotificationAdapter(Context context,List<ReceivedPost> posts) {

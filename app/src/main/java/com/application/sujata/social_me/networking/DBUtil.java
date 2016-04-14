@@ -23,9 +23,7 @@ import com.application.sujata.social_me.activities.lists.SentPostList;
 import java.util.HashMap;
 import java.util.List;
 
-/**
- * Created by sujata on 22/3/16.
- */
+
 public class DBUtil {
 
 

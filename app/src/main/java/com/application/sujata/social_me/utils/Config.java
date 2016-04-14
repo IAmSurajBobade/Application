@@ -2,9 +2,7 @@ package com.application.sujata.social_me.utils;
 
 import java.util.List;
 
-/**
- * Created by sujata on 22/3/16.
- */
+
 public class Config {
 
     //Address of our scripts of the CRUD

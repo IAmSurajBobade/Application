@@ -1,8 +1,6 @@
 package com.application.sujata.social_me.beans;
 
-/**
- * Created by sujata on 27/3/16.
- */
+
 public class MemberInfo {
     public String getName() {
         return name;

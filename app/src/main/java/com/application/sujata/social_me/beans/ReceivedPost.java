@@ -2,9 +2,7 @@ package com.application.sujata.social_me.beans;
 
 import java.util.HashMap;
 
-/**
- * Created by sujata on 26/3/16.
- */
+
 public class ReceivedPost extends Post{
 
     private String sender,mobile;

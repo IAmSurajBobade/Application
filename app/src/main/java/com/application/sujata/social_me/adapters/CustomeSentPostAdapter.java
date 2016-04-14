@@ -14,9 +14,7 @@ import com.application.sujata.social_me.beans.SentPost;
 
 import java.util.List;
 
-/**
- * Created by sujata on 27/3/16.
- */
+
 public class CustomeSentPostAdapter extends ArrayAdapter<SentPost> {
     public CustomeSentPostAdapter(Context context,List<SentPost> posts) {
         super(context, R.layout.sent_post,posts);

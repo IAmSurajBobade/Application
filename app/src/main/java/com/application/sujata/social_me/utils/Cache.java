@@ -5,9 +5,7 @@ import android.content.SharedPreferences;
 import java.util.Map;
 import java.util.Set;
 
-/**
- * Created by sujata on 23/3/16.
- */
+
 public class Cache {
 
     SharedPreferences pref;

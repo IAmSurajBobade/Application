@@ -4,9 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-/**
- * Created by sujata on 26/3/16.
- */
+
 public class SentPost extends Post{
 
     private int noresponse;
