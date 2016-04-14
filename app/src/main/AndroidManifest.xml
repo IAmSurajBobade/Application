@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.application.sujata.social_me">
+    package="com.application.sujata.social_me" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
@@ -10,61 +10,94 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".activities.EventActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".activities.RegisterActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        android:theme="@style/AppTheme" >
 
+        <activity
+            android:name=".activities.EventActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.application.sujata.social_me.activities.lists.MainActivity_nav" />
+        </activity>
+
+        <activity
+            android:name=".activities.RegisterActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".activities.lists.MainActivity"
-            android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name=".activities.GroupActivity"
             android:label="@string/title_activity_group"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.application.sujata.social_me.activities.lists.MainActivity_nav" />
+        </activity>
+
         <activity
             android:name=".post.PostListActivity"
             android:label="@string/title_post_list"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.application.sujata.social_me.activities.lists.MainActivity_nav" />
+        </activity>
+
         <activity
             android:name=".post.PostDetailActivity"
             android:label="@string/title_post_detail"
             android:parentActivityName=".post.PostListActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.application.sujata.social_me.post.PostListActivity" />
         </activity>
+
         <activity
             android:name=".activities.SentPostDetails"
             android:label="@string/title_activity_sent_post_details"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.application.sujata.social_me.activities.lists.MainActivity_nav" />
+        </activity>
+
         <activity
             android:name=".activities.ReceivedPostDetails"
             android:label="@string/title_activity_received_post_details"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.application.sujata.social_me.activities.lists.MainActivity_nav" />
+        </activity>
+
         <activity
             android:name=".activities.lists.SentPostList"
             android:label="@string/title_activity_sent_post_list"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".about_us"
-            android:label="@string/title_activity_about_us"
-            android:parentActivityName=".activities.lists.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.application.sujata.social_me.activities.lists.MainActivity" />
+                android:value="com.application.sujata.social_me.activities.lists.MainActivity_nav" />
         </activity>
+
+        <activity
+            android:name=".activities.about_us"
+            android:label="@string/title_activity_about_us"
+            android:parentActivityName=".activities.lists.MainActivity_nav"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.application.sujata.social_me.activities.lists.MainActivity_nav" />
+        </activity>
+
+        <activity
+            android:name=".activities.lists.MainActivity_nav"
+            android:label="@string/title_activity_main_activity_nav"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+
     </application>
 
 </manifest>

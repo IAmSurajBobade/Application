@@ -17,7 +17,7 @@ import com.application.sujata.social_me.activities.RegisterActivity;
 import com.application.sujata.social_me.activities.EventActivity;
 import com.application.sujata.social_me.activities.GroupActivity;
 import com.application.sujata.social_me.activities.ReceivedPostDetails;
-import com.application.sujata.social_me.activities.lists.MainActivity;
+import com.application.sujata.social_me.activities.lists.MainActivity_nav;
 import com.application.sujata.social_me.activities.lists.SentPostList;
 
 import java.util.HashMap;
@@ -215,8 +215,8 @@ public class DBUtil {
         JSON pj = new JSON(r);
         pj.parseJSONForNotifications();
 
-        if(activity instanceof MainActivity){
-            ((MainActivity) activity).getLog();
+        if(activity instanceof MainActivity_nav){
+            ((MainActivity_nav) activity).getLog();
         }
 
     }
