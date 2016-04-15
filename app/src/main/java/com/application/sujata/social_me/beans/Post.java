@@ -10,6 +10,8 @@ public class Post {
 
     private HashMap<String,String> eventDetails;
 
+    Post(){}
+
     Post(HashMap<String,String> eventDetails){
         this.eventDetails = eventDetails;
     }
