@@ -10,7 +10,7 @@
     <string name="title_activity_post_details">Post Details</string>
     <string name="title_activity_sent_post_details">Sent Post Details</string>
     <string name="title_activity_received_post_details">Received Post Details</string>
-    <string name="title_activity_sent_post_list">Sent Post List</string>
+    <string name="title_activity_sent_post_list">My Posts</string>
 
     <string name="tfname">First Name</string>
     <string name="tlname">Last Name</string>
@@ -34,7 +34,7 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="title_activity_user_profile">userProfile</string>
+    <string name="title_activity_user_profile">User Profile</string>
     <string name="title_activity_settings">Settings</string>
 
     <!-- Strings related to Settings -->
@@ -48,7 +48,7 @@
     </string>
 
     <string name="pref_title_display_name">Display name</string>
-    <string name="pref_default_display_name">John Smith</string>
+    <string name="pref_default_display_name">Suraj Bobade</string>
 
     <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
     <string-array name="pref_example_list_titles">
