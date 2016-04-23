@@ -12,6 +12,7 @@ public class MyPosts extends SentPost{
     static {
         myPosts = new ArrayList<>();
     }
+
     public static void setPosts(List<SentPost> posts){
         myPosts = posts;
     }

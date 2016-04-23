@@ -19,8 +19,7 @@ public class ReceivedPost extends Post{
     public ReceivedPost(HashMap<String, String> postDetails, String sender,String mobile){
         super(postDetails);
         this.sender = sender;
-        this.mobile=mobile;
-
+        this.mobile = mobile;
     }
 
     public String getSender(){

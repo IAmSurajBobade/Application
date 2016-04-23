@@ -18,7 +18,7 @@ public class MemberInfo {
         this.mobile = mobile;
     }
 
-    private String name,mobile;
+    private String name, mobile;
     public MemberInfo(String name,String mobile){
         this.name = name;
         this.mobile = mobile;
