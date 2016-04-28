@@ -32,7 +32,7 @@ public class RegisterActivity extends AppCompatActivity {
         cache = new Cache(getApplicationContext().getSharedPreferences("MyPref", MODE_PRIVATE));
         //cache.clearCache();
         db = new DBUtil(this);
-
+        cache.putData("uid","17");
         String registered = cache.getValue("registered");
 
         if(registered==null||!registered.equals("yes")) {

@@ -57,10 +57,12 @@ public class GroupActivity extends AppCompatActivity {
         list.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
         list.requestFocus();
 
-        contacts =new Contacts(this);
+        //contacts =new Contacts(this);
 
         db = new DBUtil(this);
-        db.loadListData(Config.URL_ALL_CONTACTS+Config.UID,Config.KEY_MOBILE);
+
+        Toast.makeText(this,Config.URL_ALL_CONTACTS+Config.UID,Toast.LENGTH_LONG).show();
+        db.loadListData(Config.URL_ALL_CONTACTS + Config.UID, Config.KEY_MOBILE);
 
 
     }

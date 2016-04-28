@@ -185,7 +185,7 @@ public class DBUtil {
 
     }
 
-    public void loadNotifications(String url){
+    public void loadNotifications(final String url){
 
         final ProgressDialog loading = ProgressDialog.show(activity, "Please wait...", "Fetching...", false, false);
 
@@ -202,6 +202,7 @@ public class DBUtil {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         Toast.makeText(activity, error.getMessage().toString(), Toast.LENGTH_LONG).show();
+                        Log.d("Error",""+url+" "+error.getMessage().toString());
                     }
                 });
 
