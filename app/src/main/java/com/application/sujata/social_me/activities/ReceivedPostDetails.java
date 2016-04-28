@@ -102,7 +102,7 @@ public class ReceivedPostDetails extends AppCompatActivity {
 
         }
         params.put(Config.KEY_RESPONSE, "" + response);
-        Toast.makeText(this,response+"",Toast.LENGTH_LONG).show();
+//        Toast.makeText(this,response+"",Toast.LENGTH_LONG).show();
         db.saveDataIntoDB(Config.URL_ADD_RESPONSE, params);
         post.setResponse(response);
 

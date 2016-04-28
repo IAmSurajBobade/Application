@@ -16,6 +16,7 @@ public class MyPosts extends SentPost{
     public static void setPosts(List<SentPost> posts){
         myPosts = posts;
     }
+    
     public static List<SentPost> getPosts(){
         return myPosts;
     }

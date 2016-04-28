@@ -39,7 +39,7 @@ public class NotificationAdapter extends ArrayAdapter<ReceivedPost> {
 
 
         TextView sender = (TextView) custom_row.findViewById(R.id.sender);
-        sender.setText("Sender:" + post.getSender());
+        sender.setText("" + post.getSender());
         custom_row.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,8 +49,8 @@ public class NotificationAdapter extends ArrayAdapter<ReceivedPost> {
             }
         });
 
-        eventName.setText("Event Name:"+post.getEventName());
-        eventTime.setText("Event Time:"+post.getEDatetime());
+        eventName.setText(""+post.getEventName());
+        eventTime.setText(""+post.getEDatetime());
 
         if(post.getResponse()!=0){
             LinearLayout layout = (LinearLayout) custom_row.findViewById(R.id.backLayout);

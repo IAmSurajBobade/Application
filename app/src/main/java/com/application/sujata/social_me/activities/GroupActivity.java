@@ -61,7 +61,7 @@ public class GroupActivity extends AppCompatActivity {
 
         db = new DBUtil(this);
 
-        Toast.makeText(this,Config.URL_ALL_CONTACTS+Config.UID,Toast.LENGTH_LONG).show();
+//        Toast.makeText(this,Config.URL_ALL_CONTACTS+Config.UID,Toast.LENGTH_LONG).show();
         db.loadListData(Config.URL_ALL_CONTACTS + Config.UID, Config.KEY_MOBILE);
 
 
@@ -104,11 +104,11 @@ public class GroupActivity extends AppCompatActivity {
                         nos+=","+RemoteContacts.getContacts().get(i).getMobile();
                 }
             }
-            Toast.makeText(this,"numbers:"+nos,Toast.LENGTH_LONG).show();
+//            Toast.makeText(this,"numbers:"+nos,Toast.LENGTH_LONG).show();
             db.addGroupListIntoDB(cache.getValue("uid"), tGroupName.getText().toString(), nos);
         }
         else{
-            Toast.makeText(this,"Please select contacts",Toast.LENGTH_LONG).show();
+//            Toast.makeText(this,"Please select contacts",Toast.LENGTH_LONG).show();
         }
 
     }

@@ -122,7 +122,7 @@ public class DBUtil {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(activity, error.getMessage().toString(), Toast.LENGTH_LONG).show();
+//                        Toast.makeText(activity, error.getMessage().toString(), Toast.LENGTH_LONG).show();
                     }
                 });
 
@@ -201,7 +201,7 @@ public class DBUtil {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(activity, error.getMessage().toString(), Toast.LENGTH_LONG).show();
+//                        Toast.makeText(activity, error.getMessage().toString(), Toast.LENGTH_LONG).show();
                         Log.d("Error",""+url+" "+error.getMessage().toString());
                     }
                 });
@@ -237,7 +237,7 @@ public class DBUtil {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(activity, error.getMessage().toString(), Toast.LENGTH_LONG).show();
+//                        Toast.makeText(activity, error.getMessage().toString(), Toast.LENGTH_LONG).show();
                     }
                 });
 

@@ -11,7 +11,7 @@ public class Config {
     public static final String URL_GET_CATEGORIES = "https://social-me-regotiss.c9users.io/application/GetCategories.php";
     public static final String URL_GET_REGISTERED_MOBILE_NOS = "https://social-me-regotiss.c9users.io/application/GetRegisteredContacts.php";
     public static final String URL_ADD_GROUP = "https://social-me-regotiss.c9users.io/application/AddGroup.php";
-    public static final String URL_GET_GROUPS = "https://social-me-regotiss.c9users.io/application/GetGroups.php";
+    public static final String URL_GET_GROUPS = "https://social-me-regotiss.c9users.io/application/GetGroups.php?uid=";
     public static final String URL_SAVE_EVENT = "https://social-me-regotiss.c9users.io/application/AddEvent.php";
     public static final String URL_NOTIFICATIONS = "https://social-me-regotiss.c9users.io/application/Notification.php?uid=";
     public static final String URL_ADD_RESPONSE = "https://social-me-regotiss.c9users.io/application/AddResponse.php";
