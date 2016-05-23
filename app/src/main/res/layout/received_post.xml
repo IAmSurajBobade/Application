@@ -20,7 +20,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Created Invite"
+                    android:text="Invitation"
                     android:padding="2dp"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:background="#8b94f4"/>
