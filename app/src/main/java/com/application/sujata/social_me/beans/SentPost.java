@@ -51,4 +51,7 @@ public class SentPost extends Post{
         return noresponse;
     }
 
+    public List<MemberInfo> getGoingList(){ return goingList;}
+    public List<MemberInfo> getMayBeList(){ return mayBeList;}
+    public List<MemberInfo> getNotList(){return notList;}
 }

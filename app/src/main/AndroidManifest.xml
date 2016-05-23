@@ -103,6 +103,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.application.sujata.social_me.activities.lists.MainActivity_nav" />
         </activity>
+        <activity
+            android:name=".ResponseLists"
+            android:label="@string/title_activity_response_lists"
+            android:parentActivityName=".activities.SentPostDetails"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.application.sujata.social_me.activities.SentPostDetails" />
+        </activity>
     </application>
 
 </manifest>

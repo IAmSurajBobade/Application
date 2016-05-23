@@ -17,6 +17,7 @@ public class Config {
     public static final String URL_ADD_RESPONSE = "https://social-me-regotiss.c9users.io/application/AddResponse.php";
     public static final String URL_EVENt_REPORT = "https://social-me-regotiss.c9users.io/application/EventReport.php?uid=";
     public static final String URL_ALL_CONTACTS = "https://social-me-regotiss.c9users.io/application/GetAllContacts.php?uid=";
+    public static final String URL_RESPONSE_LIST= "https://social-me-regotiss.c9users.io/application/GetResponseList.php?uid=,response=";
 
     //Keys that will be used to send the request to php scripts : table User
     public static final String KEY_FNAME = "fname";
