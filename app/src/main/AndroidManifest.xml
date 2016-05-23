@@ -32,23 +32,6 @@
                 android:value="com.application.sujata.social_me.activities.lists.MainActivity_nav" />
         </activity>
         <activity
-            android:name=".post.PostListActivity"
-            android:label="@string/title_post_list"
-            android:theme="@style/AppTheme.NoActionBar" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.application.sujata.social_me.activities.lists.MainActivity_nav" />
-        </activity>
-        <activity
-            android:name=".post.PostDetailActivity"
-            android:label="@string/title_post_detail"
-            android:parentActivityName=".post.PostListActivity"
-            android:theme="@style/AppTheme.NoActionBar" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.application.sujata.social_me.post.PostListActivity" />
-        </activity>
-        <activity
             android:name=".activities.SentPostDetails"
             android:label="@string/title_activity_sent_post_details"
             android:theme="@style/AppTheme.NoActionBar" >
@@ -103,15 +86,20 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.application.sujata.social_me.activities.lists.MainActivity_nav" />
         </activity>
+
         <activity
             android:name=".ResponseLists"
             android:label="@string/title_activity_response_lists"
             android:parentActivityName=".activities.SentPostDetails"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.application.sujata.social_me.activities.SentPostDetails" />
         </activity>
+        <activity
+            android:name=".activities.lists.ResponseList"
+            android:label="@string/title_activity_response_list"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
