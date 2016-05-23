@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:weightSum="3"
-                android:background="@color/colorAccent"
+                android:background="#8b94f4"
                 android:padding="2dp">
 
                 <TextView
