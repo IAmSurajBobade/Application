@@ -20,7 +20,7 @@ import com.application.sujata.social_me.utils.Contacts;
 import com.application.sujata.social_me.networking.DBUtil;
 import com.application.sujata.social_me.utils.MessageBox;
 import com.application.sujata.social_me.R;
-import com.application.sujata.social_me.activities.lists.MainActivity;
+import com.application.sujata.social_me.activities.lists.MainActivity_nav;
 
 import java.util.List;
 
@@ -57,10 +57,12 @@ public class GroupActivity extends AppCompatActivity {
         list.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
         list.requestFocus();
 
-        contacts =new Contacts(this);
+        //contacts =new Contacts(this);
 
         db = new DBUtil(this);
-        db.loadListData(Config.URL_ALL_CONTACTS+Config.UID,Config.KEY_MOBILE);
+
+//        Toast.makeText(this,Config.URL_ALL_CONTACTS+Config.UID,Toast.LENGTH_LONG).show();
+        db.loadListData(Config.URL_ALL_CONTACTS + Config.UID, Config.KEY_MOBILE);
 
 
     }
@@ -74,7 +76,7 @@ public class GroupActivity extends AppCompatActivity {
     }
 
     public void redirectToMain(){
-        Intent t =  new Intent(this,MainActivity.class);
+        Intent t =  new Intent(this,MainActivity_nav.class);
         startActivity(t);
         finish();
     }
@@ -102,11 +104,11 @@ public class GroupActivity extends AppCompatActivity {
                         nos+=","+RemoteContacts.getContacts().get(i).getMobile();
                 }
             }
-            Toast.makeText(this,"numbers:"+nos,Toast.LENGTH_LONG).show();
+//            Toast.makeText(this,"numbers:"+nos,Toast.LENGTH_LONG).show();
             db.addGroupListIntoDB(cache.getValue("uid"), tGroupName.getText().toString(), nos);
         }
         else{
-            Toast.makeText(this,"Please select contacts",Toast.LENGTH_LONG).show();
+//            Toast.makeText(this,"Please select contacts",Toast.LENGTH_LONG).show();
         }
 
     }

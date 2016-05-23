@@ -39,7 +39,7 @@
                 android:text="Category"
                 android:hint="Category"
                 android:layout_gravity="right"
-                android:background="@color/colorAccent"/>
+                android:background="#8b94f4"/>
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -47,18 +47,19 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tEventDesc"
                 android:layout_centerHorizontal="true"
-                android:weightSum="4">
+                android:weightSum="4"
+                android:padding="2dp">
 
                 <EditText
                     android:layout_width="62dp"
                     android:layout_height="35dp"
                     android:inputType="textPersonName"
-                    android:text="Frm: "
+                    android:text="From: "
                     android:ems="10"
                     android:id="@+id/from"
-                    android:hint="Frm: "
+                    android:hint="From: "
                     android:background="#e7e3e3"
-                    android:layout_weight="0.64" />
+                    android:layout_weight="1" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -76,34 +77,66 @@
                     android:hint="Mobile Number"/>
             </LinearLayout>
 
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tEventDesc"
+            android:layout_centerHorizontal="true"
+            android:weightSum="3"
+            android:padding="2dp">
+
+            <EditText
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/eventNameTitle"
+                android:text="Event Name"
+                android:inputType="textPersonName"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:background="#e7e3e3"
+                android:layout_weight="1"
+                android:layout_marginRight="2dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/eventName"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:hint="Event Name"
+                android:layout_weight="2" />
+
+            </LinearLayout>
             <LinearLayout
-                android:orientation="vertical"
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tEventDesc"
+                android:layout_centerHorizontal="true"
+                android:weightSum="3"
+                android:padding="2dp">
 
                 <EditText
-                    android:layout_width="match_parent"
+                    android:layout_width="50dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/eventName"
-                    android:layout_gravity="center_horizontal"
-                    android:hint="Event Name"
-                    android:gravity="fill_horizontal|center|fill"
-                    android:contentDescription="This is Name of Event" />
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="time"
+                    android:id="@+id/eventDateTimeTitle"
+                    android:text="Event Time"
+                    android:inputType="textPersonName"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:background="#e7e3e3"
+                    android:layout_weight="1"
                     android:ems="10"
+                    android:layout_marginRight="2dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:id="@+id/eventDateTime"
-                    android:layout_gravity="center_horizontal"
-                    android:hint="Event Time" />
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:hint="Event Time"
+                    android:layout_weight="2" />
+
             </LinearLayout>
 
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -111,20 +144,18 @@
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:text="Interested?"
                     android:id="@+id/response"
-                    android:padding="5dp"
+                    android:padding="2dp"
                     android:background="#e7e3e3"/>
 
                 <RadioGroup
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/responseGroup"
+                    android:padding="2dp"
+                    android:orientation="horizontal"
                     android:layout_below="@+id/response">
 
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="3">
+
                         <RadioButton
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -134,6 +165,7 @@
                             android:checked="false"
                             android:layout_alignParentLeft="true"
                             android:layout_alignParentStart="true"
+
                             android:background="#e7e3e3" />
 
                         <RadioButton
@@ -158,10 +190,8 @@
                             android:layout_alignParentLeft="true"
                             android:background="#e7e3e3" />
 
-                    </LinearLayout>
-                </RadioGroup>
 
-            </LinearLayout>
+                </RadioGroup>
 
             <Button
                 style="?android:attr/buttonStyleSmall"
@@ -169,17 +199,29 @@
                 android:layout_height="wrap_content"
                 android:text="Respond"
                 android:id="@+id/button2"
+                android:padding="2dp"
                 android:layout_gravity="center_horizontal" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textMultiLine"
-                android:ems="10"
+                android:id="@+id/tEventDescTitle"
+                android:text="Event Discription"
+                android:inputType="textPersonName"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:background="#e7e3e3"
+                android:padding="2dp"
+                android:layout_weight="1" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:id="@+id/tEventDesc"
+                android:inputType="textMultiLine"
+                android:padding="5dp"
+                android:ems="10"
+                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:hint="Discription of Event"
-                android:layout_below="@+id/button2"
-                />
+                android:layout_weight="2" />
         </LinearLayout>
     </android.support.v7.widget.CardView>
 </RelativeLayout>

@@ -4,13 +4,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-/**
- * Created by sujata on 26/3/16.
- */
+
 public class SentPost extends Post{
 
     private int noresponse;
     private List<MemberInfo> goingList,mayBeList,notList;
+    public SentPost(){
+
+    }
 
     public SentPost(HashMap<String, String> postDetails, int noresponse){
         super(postDetails);
@@ -49,4 +50,7 @@ public class SentPost extends Post{
         return noresponse;
     }
 
+    public List<MemberInfo> getGoingList(){ return goingList;}
+    public List<MemberInfo> getMayBeList(){ return mayBeList;}
+    public List<MemberInfo> getNotList(){return notList;}
 }

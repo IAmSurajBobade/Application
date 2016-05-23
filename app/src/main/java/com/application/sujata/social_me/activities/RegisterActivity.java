@@ -9,7 +9,7 @@ import android.widget.EditText;
 import com.application.sujata.social_me.utils.Cache;
 import com.application.sujata.social_me.utils.Config;
 import com.application.sujata.social_me.R;
-import com.application.sujata.social_me.activities.lists.MainActivity;
+import com.application.sujata.social_me.activities.lists.MainActivity_nav;
 import com.application.sujata.social_me.networking.DBUtil;
 
 import java.util.HashMap;
@@ -32,7 +32,7 @@ public class RegisterActivity extends AppCompatActivity {
         cache = new Cache(getApplicationContext().getSharedPreferences("MyPref", MODE_PRIVATE));
         //cache.clearCache();
         db = new DBUtil(this);
-
+        cache.putData("uid","17");
         String registered = cache.getValue("registered");
 
         if(registered==null||!registered.equals("yes")) {
@@ -79,7 +79,7 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
     public void redirectToMain() {
-        Intent t =  new Intent(this,MainActivity.class);
+        Intent t =  new Intent(this,MainActivity_nav.class);
         startActivity(t);
         finish();
     }

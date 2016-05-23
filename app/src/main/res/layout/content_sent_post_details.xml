@@ -29,40 +29,94 @@
             android:padding="2dp"
             android:id="@+id/liner">
 
-            <EditText
+            <LinearLayout
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/category"
-                android:textAlignment="viewEnd"
-                android:gravity="end"
-                android:padding="2dp"
-                android:text="Category"
-                android:hint="Category"
-                android:layout_gravity="right"
-                android:background="@color/colorAccent"/>
+                android:layout_centerHorizontal="true"
+                android:weightSum="3"
+                android:background="#8b94f4"
+                android:padding="2dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Category"
+                    android:inputType="textPersonName"
+                    android:layout_gravity="end"
+                    android:gravity="end"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_marginRight="2dp"/>
+                <TextView
+                    android:id="@+id/category"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="viewEnd"
+                    android:gravity="end"
+                    android:padding="2dp"
+                    android:text="Category"
+                    android:hint="Category"
+                    android:layout_gravity="right"/>
+
+            </LinearLayout>
 
             <LinearLayout
-                android:orientation="vertical"
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tEventDesc"
+                android:layout_centerHorizontal="true"
+                android:weightSum="3"
+                android:padding="2dp">
 
-                <EditText
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="50dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/eName"
-                    android:layout_gravity="center_horizontal"
+                    android:id="@+id/eventNameTitle"
+                    android:text="Event Name"
+                    android:inputType="textPersonName"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:background="#e7e3e3"
+                    android:layout_weight="1"
+                    android:layout_marginRight="2dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/eventName"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
                     android:hint="Event Name"
-                    android:gravity="fill_horizontal|center|fill"
-                    android:contentDescription="This is Name of Event" />
+                    android:layout_weight="2" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tEventDesc"
+                android:layout_centerHorizontal="true"
+                android:weightSum="3"
+                android:padding="2dp">
 
-                <EditText
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="50dp"
                     android:layout_height="wrap_content"
-                    android:inputType="time"
+                    android:id="@+id/eventDateTimeTitle"
+                    android:text="Event Time"
+                    android:inputType="textPersonName"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:background="#e7e3e3"
+                    android:layout_weight="1"
                     android:ems="10"
-                    android:id="@+id/eDateTime"
-                    android:layout_gravity="center_horizontal"
-                    android:hint="Event Time" />
+                    android:layout_marginRight="2dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/eventDateTime"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:hint="Event Time"
+                    android:layout_weight="2" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -95,35 +149,42 @@
                         android:layout_row="0"
                         android:layout_column="0"
                         android:layout_columnWeight="1"
-                        android:layout_gravity="center"/>
-                    <EditText
+                        android:layout_gravity="center"
+                        android:onClick="showComingList" />
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
                         android:layout_row="1"
                         android:layout_column="0"
-                        android:text="5"
+                        android:text=""
+                        android:hint="0"
                         android:layout_gravity="center"
                         android:layout_columnWeight="1"
-                        android:id="@+id/going"/>
+                        android:id="@+id/going"
+                        android:onClick="showComingList" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:text="No reply"
+                        android:text="My Be"
                         android:layout_row="0"
                         android:layout_column="1"
                         android:layout_gravity="center"
-                        android:layout_columnWeight="1"/>
-                    <EditText
+                        android:layout_columnWeight="1"
+                        android:onClick="showMayBeList" />
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
                         android:layout_row="1"
                         android:layout_column="1"
-                        android:text="6"
+                        android:text="0"
                         android:layout_gravity="center"
                         android:layout_columnWeight="1"
-                        android:id="@+id/maybe"/>
+                        android:id="@+id/maybe"
+                        android:onClick="showMayBeList" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -133,28 +194,44 @@
                         android:layout_row="0"
                         android:layout_column="2"
                         android:layout_gravity="center"
-                        android:layout_columnWeight="1"/>
-                    <EditText
+                        android:layout_columnWeight="1"
+                        android:onClick="showNotComingList" />
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:padding="2dp"
                         android:layout_row="1"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
                         android:layout_column="2"
-                        android:text="7"
+                        android:text="0"
                         android:layout_gravity="center"
                         android:layout_columnWeight="1"
-                        android:id="@+id/not"/>
+                        android:id="@+id/not"
+                        android:onClick="showNotComingList" />
                 </GridLayout>
 
             </LinearLayout>
 
-            <EditText
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Description:"
+                android:inputType="textPersonName"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:background="#e7e3e3"
+                android:layout_weight="1"
+                android:layout_marginRight="2dp"/>
+
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textMultiLine"
+                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:ems="10"
-                android:id="@+id/textView8"
+                android:paddingLeft="2dp"
+                android:layout_marginLeft="2dp"
+                android:id="@+id/discription"
                 android:hint="Discription of Event"
-                android:layout_below="@+id/button2"
                 />
         </LinearLayout>
     </android.support.v7.widget.CardView>

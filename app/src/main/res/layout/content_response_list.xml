@@ -9,14 +9,22 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".activities.lists.MainActivity"
-    tools:showIn="@layout/activity_main">
+    tools:context="com.application.sujata.social_me.activities.lists.ResponseList"
+    tools:showIn="@layout/activity_response_list">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Count : "
+        android:id="@+id/status"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true" />
 
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/log_list"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:id="@+id/responseList"
+        android:layout_below="@+id/status"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

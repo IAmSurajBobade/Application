@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -15,7 +16,7 @@ import com.application.sujata.social_me.utils.Config;
 import com.application.sujata.social_me.networking.DBUtil;
 import com.application.sujata.social_me.utils.MessageBox;
 import com.application.sujata.social_me.R;
-import com.application.sujata.social_me.activities.lists.MainActivity;
+import com.application.sujata.social_me.activities.lists.MainActivity_nav;
 
 import java.util.HashMap;
 import java.util.List;
@@ -43,7 +44,7 @@ public class EventActivity extends AppCompatActivity {
 
         db = new DBUtil(this);
         String uid = cache.getValue("uid");
-        Toast.makeText(EventActivity.this, "**"+ Config.URL_GET_GROUPS+uid+"**", Toast.LENGTH_LONG).show();
+//        Toast.makeText(EventActivity.this, "**"+ Config.URL_GET_GROUPS+uid+"**", Toast.LENGTH_LONG).show();
 
         //getting references for widgets
         categoriesSpinner = (Spinner) findViewById(R.id.category_spinner);
@@ -55,9 +56,8 @@ public class EventActivity extends AppCompatActivity {
 
         eventDetails = new HashMap<>();
 
+        db.loadListData(Config.URL_GET_GROUPS+Config.UID,Config.KEY_GROUPNAME);
         db.loadListData(Config.URL_GET_CATEGORIES,Config.KEY_CATEGORY);
-        db.loadListData(Config.URL_GET_GROUPS+uid,Config.KEY_GROUPNAME);
-
 
     }
 
@@ -79,6 +79,7 @@ public class EventActivity extends AppCompatActivity {
         // Creating adapter for groups
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, groups);
         setGroupsSpinner(dataAdapter);
+        //Log.d("list", groups.get(0));
     }
 
     public void postEvent(View v){
@@ -107,7 +108,7 @@ public class EventActivity extends AppCompatActivity {
         }
     }
     public void redirectToMain(){
-        Intent t =  new Intent(this,MainActivity.class);
+        Intent t =  new Intent(this,MainActivity_nav.class);
         startActivity(t);
         finish();
     }

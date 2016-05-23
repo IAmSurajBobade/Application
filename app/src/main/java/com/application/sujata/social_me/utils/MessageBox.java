@@ -4,9 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 
-/**
- * Created by sujata on 26/3/16.
- */
+
 public class MessageBox extends AlertDialog.Builder{
 
     public MessageBox(Context context,String message,DialogInterface.OnClickListener listener){

@@ -3,9 +3,7 @@ package com.application.sujata.social_me.beans;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by sujata on 27/3/16.
- */
+
 
 //SingleTon Class
 public class NotificationList {

@@ -11,11 +11,11 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.application.sujata.social_me.activities.lists.MainActivity_nav;
 import com.application.sujata.social_me.utils.Config;
 import com.application.sujata.social_me.networking.DBUtil;
 import com.application.sujata.social_me.utils.MessageBox;
 import com.application.sujata.social_me.R;
-import com.application.sujata.social_me.activities.lists.MainActivity;
 import com.application.sujata.social_me.beans.NotificationList;
 
 import com.application.sujata.social_me.beans.ReceivedPost;
@@ -70,16 +70,16 @@ public class ReceivedPostDetails extends AppCompatActivity {
     }
 
     public void redirectToMain(){
-        Intent t =  new Intent(this,MainActivity.class);
+        Intent t =  new Intent(this,MainActivity_nav.class);
         startActivity(t);
         finish();
     }
     public void setAllDetails(ReceivedPost p){
-        tEventName.setText("Event Name: "+p.getEventName());
-        tEventDescr.setText("Event Description:\n"+p.getEdesc());
-        tEventTime.setText("Event Time: "+p.getEDatetime());
-        tSender.setText("Sender: " + p.getSender());
-        tMobile.setText("Sender Mobile No: " + p.getMobile());
+        tEventName.setText(p.getEventName());
+        tEventDescr.setText(p.getEdesc());
+        tEventTime.setText(p.getEDatetime().trim());
+        tSender.setText(p.getSender());
+        tMobile.setText("("+p.getMobile()+")");
     }
 
     public void sendResponse(View v){
@@ -102,7 +102,7 @@ public class ReceivedPostDetails extends AppCompatActivity {
 
         }
         params.put(Config.KEY_RESPONSE, "" + response);
-        Toast.makeText(this,response+"",Toast.LENGTH_LONG).show();
+//        Toast.makeText(this,response+"",Toast.LENGTH_LONG).show();
         db.saveDataIntoDB(Config.URL_ADD_RESPONSE, params);
         post.setResponse(response);
 

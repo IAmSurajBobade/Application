@@ -1,8 +1,6 @@
 package com.application.sujata.social_me.beans;
 
-/**
- * Created by sujata on 27/3/16.
- */
+
 public class MemberInfo {
     public String getName() {
         return name;
@@ -20,9 +18,13 @@ public class MemberInfo {
         this.mobile = mobile;
     }
 
-    private String name,mobile;
+    private String name, mobile;
     public MemberInfo(String name,String mobile){
         this.name = name;
         this.mobile = mobile;
+    }
+
+    public String toString(){
+        return name+" "+mobile;
     }
 }

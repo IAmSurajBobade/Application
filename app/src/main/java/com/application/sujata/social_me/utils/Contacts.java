@@ -10,9 +10,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by sujata on 25/3/16.
- */
 public class Contacts {
     Map<String,String> contactsNameMap;
     Map<String,String> contactsNoMap;
