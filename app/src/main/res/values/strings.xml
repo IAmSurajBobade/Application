@@ -98,4 +98,5 @@
 
     <string name="pref_title_vibrate">Vibrate</string>
     <string name="title_activity_response_lists">ResponseLists</string>
+    <string name="title_activity_response_list">ResponseList</string>
 </resources>

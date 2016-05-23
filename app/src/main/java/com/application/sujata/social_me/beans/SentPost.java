@@ -9,7 +9,6 @@ public class SentPost extends Post{
 
     private int noresponse;
     private List<MemberInfo> goingList,mayBeList,notList;
-
     public SentPost(){
 
     }

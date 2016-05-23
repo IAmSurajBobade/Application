@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.application.sujata.social_me.activities.lists.ResponseList;
 import com.application.sujata.social_me.beans.MyPosts;
 import com.application.sujata.social_me.beans.NotificationList;
 import com.application.sujata.social_me.beans.ReceivedPost;
@@ -17,6 +18,7 @@ import com.application.sujata.social_me.beans.SentPost;
 import com.application.sujata.social_me.networking.DBUtil;
 import com.application.sujata.social_me.R;
 import com.application.sujata.social_me.activities.lists.MainActivity_nav;
+import com.application.sujata.social_me.utils.Config;
 
 import java.util.List;
 
@@ -24,6 +26,7 @@ public class SentPostDetails extends AppCompatActivity {
 
     DBUtil db;
     SentPost post;
+    int postNo;
     TextView teventnm,tdatetime,tgoing,tnot,tmaybe,tdescr,tcateg;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +50,8 @@ public class SentPostDetails extends AppCompatActivity {
         else{
 
             List<SentPost> posts=MyPosts.getPosts();
-            post = posts.get(data.getInt("position"));
+            postNo = data.getInt("position");
+            post = posts.get(postNo);
             setAllDetails();
         }
 
@@ -66,8 +70,8 @@ public class SentPostDetails extends AppCompatActivity {
         tdatetime.setText(post.getEDatetime());
         tgoing.setText(""+post.getGoingCount());
         tmaybe.setText(""+post.getMayBeCount());
-        tnot.setText(""+post.getNotCount());
-        tcateg.setText(""+post.getCategory());
+        tnot.setText("" + post.getNotCount());
+        tcateg.setText("" + post.getCategory());
         try {
             Log.d("msg", "" + post.getGoingCount());
         }
@@ -83,4 +87,19 @@ public class SentPostDetails extends AppCompatActivity {
         finish();
     }
 
+    public void showComingList(View v){
+        redirectToDisplay(Config.TAG_GOING);
+    }
+    public void showMayBeList(View v){
+        redirectToDisplay(Config.TAG_MAYBE);
+    }
+    public void showNotComingList(View v){
+        redirectToDisplay(Config.TAG_NOT);
+    }
+    public void redirectToDisplay(int option){
+        Intent itent = new Intent(this,ResponseList.class);
+        itent.putExtra("position",postNo);
+        itent.putExtra("option",option);
+        startActivity(itent);
+    }
 }

@@ -23,4 +23,8 @@ public class MemberInfo {
         this.name = name;
         this.mobile = mobile;
     }
+
+    public String toString(){
+        return name+" "+mobile;
+    }
 }
