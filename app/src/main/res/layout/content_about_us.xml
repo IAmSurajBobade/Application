@@ -177,7 +177,7 @@
                         android:layout_height="100dp"
                         android:id="@+id/developer2_photo"
                         android:layout_weight="1"
-                        android:src="@drawable/surajab"/>
+                        android:src="@drawable/sujata"/>
                     <GridLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -276,7 +276,7 @@
                         android:layout_height="100dp"
                         android:id="@+id/developer3_photo"
                         android:layout_weight="1"
-                        android:src="@drawable/mrunalks"/>
+                        android:src="@drawable/mrunal"/>
                     <GridLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -355,7 +355,7 @@
             android:layout_margin="10dp"
             card_view:cardCornerRadius="5dp"
             android:elevation="15dp">
-        <LinearLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -366,7 +366,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
-                    android:src="@drawable/surajab"/>
+                    android:src="@drawable/ssk"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -393,7 +393,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
-                    android:src="@drawable/surajab"/>
+                    android:src="@drawable/bhandari"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

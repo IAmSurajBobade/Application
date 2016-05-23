@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:weightSum="3"
-                android:background="@color/colorAccent"
+                android:background="#8b94f4"
                 android:padding="2dp">
 
                 <TextView
@@ -168,7 +168,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:text="May Be"
+                        android:text="My Be"
                         android:layout_row="0"
                         android:layout_column="1"
                         android:layout_gravity="center"
@@ -231,7 +231,7 @@
                 android:paddingLeft="2dp"
                 android:layout_marginLeft="2dp"
                 android:id="@+id/discription"
-                android:hint="Description of Event"
+                android:hint="Discription of Event"
                 />
         </LinearLayout>
     </android.support.v7.widget.CardView>
