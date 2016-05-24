@@ -66,12 +66,12 @@ public class SentPostDetails extends AppCompatActivity {
         tdescr = (TextView)findViewById(R.id.discription);
         tcateg = (TextView)findViewById(R.id.category);
 
-        teventnm.setText(post.getEventName());
-        tdatetime.setText(post.getEDatetime());
+        teventnm.setText(post.getEventName().trim());
+        tdatetime.setText(post.getEDatetime().trim());
         tgoing.setText(""+post.getGoingCount());
         tmaybe.setText(""+post.getMayBeCount());
         tnot.setText("" + post.getNotCount());
-        tcateg.setText("" + post.getCategory());
+        tcateg.setText("" + post.getCategory().trim());
         try {
             Log.d("msg", "" + post.getGoingCount());
         }

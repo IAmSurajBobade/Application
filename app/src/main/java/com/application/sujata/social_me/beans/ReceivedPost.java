@@ -23,10 +23,10 @@ public class ReceivedPost extends Post{
     }
 
     public String getSender(){
-        return sender;
+        return sender.trim();
     }
     public String getMobile(){
-        return mobile;
+        return mobile.trim();
     }
 
 

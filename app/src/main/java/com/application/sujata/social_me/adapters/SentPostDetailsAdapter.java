@@ -42,13 +42,13 @@ public class SentPostDetailsAdapter extends ArrayAdapter<MyPosts> {
         TextView discription = (TextView) custom_row.findViewById(R.id.discription);
 
 
-        eventName.setText(post.getEventName());
-        eventTime.setText(post.getEDatetime());
+        eventName.setText(post.getEventName().trim());
+        eventTime.setText(post.getEDatetime().trim());
         response_going.setText(post.getGoingCount());
         response_maybe.setText(post.getMayBeCount());
         response_not.setText(post.getNotCount());
-        category.setText(post.getCategory());
-        discription.setText(post.getEdesc());
+        category.setText(post.getCategory().trim());
+        discription.setText(post.getEdesc().trim());
         return custom_row;
     }
 }

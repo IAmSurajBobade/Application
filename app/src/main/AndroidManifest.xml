@@ -70,15 +70,6 @@
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
         <activity
-            android:name=".userProfile"
-            android:label="@string/title_activity_user_profile"
-            android:parentActivityName=".activities.lists.MainActivity_nav"
-            android:theme="@style/AppTheme.NoActionBar" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.application.sujata.social_me.activities.lists.MainActivity_nav" />
-        </activity>
-        <activity
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings"
             android:parentActivityName=".activities.lists.MainActivity_nav" >

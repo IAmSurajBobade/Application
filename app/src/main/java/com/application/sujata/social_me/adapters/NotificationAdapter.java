@@ -49,8 +49,8 @@ public class NotificationAdapter extends ArrayAdapter<ReceivedPost> {
             }
         });
 
-        eventName.setText(""+post.getEventName());
-        eventTime.setText(""+post.getEDatetime());
+        eventName.setText(""+post.getEventName().trim());
+        eventTime.setText(""+post.getEDatetime().trim());
 
         if(post.getResponse()!=0){
             LinearLayout layout = (LinearLayout) custom_row.findViewById(R.id.backLayout);

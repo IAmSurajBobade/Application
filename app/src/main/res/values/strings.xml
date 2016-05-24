@@ -20,8 +20,8 @@
     <string name="register_button">Register</string>
 
     <string name="dev1_rol">-Team Lead\n-Developer</string>
-    <string name="dev2_rol">-Lead Developer\n-Back End Developer</string>
-    <string name="dev3_rol">-Lead Tester\n-Developer</string>
+    <string name="dev2_rol">-Developer\n-Back End Developer</string>
+    <string name="dev3_rol">-Tester\n-Developer</string>
     <string name="dev1_email">suraj@wceacses.org</string>
     <string name="dev2_email">sujata.regoti@gmail.com</string>
     <string name="dev3_email">mrunalks@gmail.com</string>

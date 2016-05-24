@@ -44,8 +44,8 @@ public class CustomeSentPostAdapter extends ArrayAdapter<SentPost> {
                 }
             });
 
-        eventName.setText("" + post.getEventName());
-        eventTime.setText("" + post.getEDatetime());
+        eventName.setText("" + post.getEventName().trim());
+        eventTime.setText("" + post.getEDatetime().trim());
         return custom_row;
     }
 }

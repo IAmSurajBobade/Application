@@ -32,7 +32,7 @@ public class RegisterActivity extends AppCompatActivity {
         cache = new Cache(getApplicationContext().getSharedPreferences("MyPref", MODE_PRIVATE));
         //cache.clearCache();
         db = new DBUtil(this);
-        cache.putData("uid","17");
+//        cache.putData("uid","17");
         String registered = cache.getValue("registered");
 
         if(registered==null||!registered.equals("yes")) {
@@ -58,11 +58,11 @@ public class RegisterActivity extends AppCompatActivity {
 
     public void register(View v){
 
-        userDetails.put(Config.KEY_FNAME, tfname.getText().toString());
-        userDetails.put(Config.KEY_LNAME,tlname.getText().toString());
-        userDetails.put(Config.KEY_EMAIL,temail.getText().toString());
-        userDetails.put(Config.KEY_MOBILE,tmobile.getText().toString());
-        userDetails.put(Config.KEY_DOB,tDOB.getText().toString());
+        userDetails.put(Config.KEY_FNAME, tfname.getText().toString().trim());
+        userDetails.put(Config.KEY_LNAME,tlname.getText().toString().trim());
+        userDetails.put(Config.KEY_EMAIL,temail.getText().toString().trim());
+        userDetails.put(Config.KEY_MOBILE,tmobile.getText().toString().trim());
+        userDetails.put(Config.KEY_DOB,tDOB.getText().toString().trim());
 
         db.saveDataIntoDB(Config.URL_REGISTER,userDetails);
 

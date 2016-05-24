@@ -75,11 +75,11 @@ public class ReceivedPostDetails extends AppCompatActivity {
         finish();
     }
     public void setAllDetails(ReceivedPost p){
-        tEventName.setText(p.getEventName());
-        tEventDescr.setText(p.getEdesc());
+        tEventName.setText(p.getEventName().trim());
+        tEventDescr.setText(p.getEdesc().trim());
         tEventTime.setText(p.getEDatetime().trim());
-        tSender.setText(p.getSender());
-        tMobile.setText("("+p.getMobile()+")");
+        tSender.setText(p.getSender().trim());
+        tMobile.setText("("+p.getMobile().trim()+")");
     }
 
     public void sendResponse(View v){

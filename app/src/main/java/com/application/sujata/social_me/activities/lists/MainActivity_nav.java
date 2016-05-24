@@ -22,12 +22,10 @@ import com.application.sujata.social_me.SettingsActivity;
 import com.application.sujata.social_me.activities.EventActivity;
 import com.application.sujata.social_me.activities.GroupActivity;
 import com.application.sujata.social_me.activities.about_us;
-import com.application.sujata.social_me.activities.lists.SentPostList;
 import com.application.sujata.social_me.adapters.NotificationAdapter;
 import com.application.sujata.social_me.beans.NotificationList;
 import com.application.sujata.social_me.beans.Post;
 import com.application.sujata.social_me.networking.DBUtil;
-import com.application.sujata.social_me.userProfile;
 import com.application.sujata.social_me.utils.Config;
 
 import java.util.List;
@@ -92,10 +90,7 @@ public class MainActivity_nav extends AppCompatActivity
         Intent t =  new Intent(this,GroupActivity.class);
         startActivity(t);
     }
-    public void redirectToViewProfile(){
-        Intent t =  new Intent(this,userProfile.class);
-        startActivity(t);
-    }
+
     public void redirectToAddEvent(){
         Intent t =  new Intent(this,EventActivity.class);
         startActivity(t);
@@ -170,10 +165,7 @@ public class MainActivity_nav extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_profile) {
-            redirectToViewProfile();
-
-        } else if (id == R.id.nav_add_group) {
+        if (id == R.id.nav_add_group) {
             redirectToAddGroup();
 
         } else if (id == R.id.nav_my_posts){

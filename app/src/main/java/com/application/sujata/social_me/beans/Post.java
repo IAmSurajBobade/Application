@@ -17,21 +17,21 @@ public class Post {
     }
 
     public String getEventName(){
-        return eventDetails.get(Config.KEY_ENAME);
+        return eventDetails.get(Config.KEY_ENAME).trim();
     }
     public String getEdesc() {
-        return eventDetails.get(Config.KEY_EDESC);
+        return eventDetails.get(Config.KEY_EDESC).trim();
     }
     public String getCategory() {
-        return eventDetails.get(Config.KEY_CATEGORY);
+        return eventDetails.get(Config.KEY_CATEGORY).trim();
     }
     public String getGname() {
-        return eventDetails.get(Config.KEY_GROUPNAME);
+        return eventDetails.get(Config.KEY_GROUPNAME).trim();
     }
     public String getEDatetime() {
-        return eventDetails.get(Config.KEY_ETIME);
+        return eventDetails.get(Config.KEY_ETIME).trim();
     }
     public String getGeneratedDateTime(){
-        return eventDetails.get(Config.KEY_EGENERATED);
+        return eventDetails.get(Config.KEY_EGENERATED).trim();
     }
 }

@@ -87,11 +87,11 @@ public class EventActivity extends AppCompatActivity {
     }
 
     private void savePost() {
-        eventDetails.put(Config.KEY_ENAME,tEname.getText().toString());
-        eventDetails.put(Config.KEY_CATEGORY,categoriesSpinner.getSelectedItem().toString());
-        eventDetails.put(Config.KEY_EDESC,tEdescr.getText().toString());
-        eventDetails.put(Config.KEY_ETIME,tEdate.getText()+" "+tEtime.getText());
-        eventDetails.put(Config.KEY_GROUPNAME,groupsSpinner.getSelectedItem().toString());
+        eventDetails.put(Config.KEY_ENAME,tEname.getText().toString().trim());
+        eventDetails.put(Config.KEY_CATEGORY,categoriesSpinner.getSelectedItem().toString().trim());
+        eventDetails.put(Config.KEY_EDESC,tEdescr.getText().toString().trim());
+        eventDetails.put(Config.KEY_ETIME,tEdate.getText().toString().trim()+" "+tEtime.getText().toString().trim());
+        eventDetails.put(Config.KEY_GROUPNAME,groupsSpinner.getSelectedItem().toString().trim());
         eventDetails.put(Config.KEY_UID,cache.getValue("uid"));
 
         db.saveDataIntoDB(Config.URL_SAVE_EVENT, eventDetails);
